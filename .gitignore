@@ -22,9 +22,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# IDE files
 .history
 .atl
 .vscode
+
+# local assets and docs
+favicon/
+public/lidia-branding.pdf
 
 # typescript
 *.tsbuildinfo
