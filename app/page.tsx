@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
@@ -184,8 +185,8 @@ export default function Home() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#1275d8"
-            colorB="#e19136"
+            colorA="#0C2B3E"
+            colorB="#BF6FCC"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -197,11 +198,11 @@ export default function Home() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#0066ff"
-            upColor="#0066ff"
-            downColor="#d1d1d1"
-            leftColor="#e19136"
-            rightColor="#e19136"
+            baseColor="#0C2B3E"
+            upColor="#BF6FCC"
+            downColor="#CFA4DE"
+            leftColor="#CFA4DE"
+            rightColor="#BF6FCC"
             intensity={0.9}
             radius={1.8}
             momentum={25}
@@ -209,7 +210,7 @@ export default function Home() {
             opacity={0.97}
           />
         </Shader>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/70 via-brand-navy/55 to-brand-purple/35" />
       </div>
 
       <nav
@@ -217,18 +218,21 @@ export default function Home() {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <button
-          onClick={() => scrollToSection(0)}
-          className="flex items-center gap-2 transition-transform hover:scale-105"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
-            <span className="font-sans text-xl font-bold text-foreground">A</span>
+        <button onClick={() => scrollToSection(0)} className="flex items-center gap-2 transition-transform hover:scale-105">
+          <div className="flex items-center gap-3 rounded-2xl border border-foreground/15 bg-foreground/8 px-3 py-2 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-foreground/12">
+            <Image
+              src="/lidia-logo-white.png"
+              alt="LidiA Legaltech"
+              width={108}
+              height={40}
+              priority
+              className="h-8 w-auto md:h-9"
+            />
           </div>
-          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Acme</span>
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Work", "Services", "About", "Contact"].map((item, index) => (
+          {["Inicio", "Soluciones", "Capacidades", "Nosotros", "Contacto"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -247,7 +251,7 @@ export default function Home() {
         </div>
 
         <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Get Started
+          Solicitar demo
         </MagneticButton>
       </nav>
 
@@ -262,39 +266,37 @@ export default function Home() {
         {/* Hero Section */}
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">WebGL Powered Design</p>
+            <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-brand-lavanda/45 bg-foreground/10 px-4 py-1.5 backdrop-blur-md duration-700">
+              <p className="text-xs font-medium text-foreground/90">Asistente legal inteligente para equipos modernos</p>
             </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
+            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
               <span className="text-balance">
-                Creative experiences
+                Claridad legal
                 <br />
-                in fluid motion
+                en segundos,
+                <br />
+                para personas reales
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Transforming digital spaces with dynamic shader effects and real-time visual experiences that captivate
-                and inspire.
+                LidiA Legaltech transforma textos complejos en respuestas simples, confiables y accionables para tu
+                equipo, sin perder precisión jurídica.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
-              <MagneticButton
-                size="lg"
-                variant="primary"
-                onClick={() => window.open("https://v0.app/templates/R3n0gnvYFbO", "_blank")}
-              >
-                Open in v0
+              <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
+                Agendar una demo
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(2)}>
-                View Demo
+                Ver capacidades
               </MagneticButton>
             </div>
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500">
             <div className="flex items-center gap-2">
-              <p className="font-mono text-xs text-foreground/80">Scroll to explore</p>
+              <p className="text-xs text-foreground/80">Deslizá para explorar</p>
               <div className="flex h-6 w-12 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md">
                 <div className="h-2 w-2 animate-pulse rounded-full bg-foreground/80" />
               </div>

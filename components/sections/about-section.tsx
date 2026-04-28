@@ -20,12 +20,12 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
                 isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
               }`}
             >
-              <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
-                Building the
+              <h2 className="mb-3 font-sans text-3xl font-semibold leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
+                Tecnología legal
                 <br />
-                future of
+                cercana,
                 <br />
-                <span className="text-foreground/40">digital</span>
+                <span className="text-foreground/65">precisa y útil</span>
               </h2>
             </div>
 
@@ -36,11 +36,12 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               style={{ transitionDelay: "200ms" }}
             >
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                We're a collective of designers, developers, and creative technologists obsessed with crafting
-                exceptional digital experiences.
+                En LidiA combinamos IA aplicada y conocimiento jurídico para que las decisiones legales sean más
+                rápidas, claras y seguras.
               </p>
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Every project is an opportunity to explore new possibilities and push creative boundaries.
+                Diseñamos una experiencia accesible, humana y confiable para estudios, áreas legales internas y
+                equipos de negocio.
               </p>
             </div>
           </div>
@@ -48,9 +49,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           {/* Right side - Stats with creative layout */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
-              { value: "150+", label: "Projects", sublabel: "Delivered worldwide", direction: "right" },
-              { value: "8", label: "Years", sublabel: "Of innovation", direction: "left" },
-              { value: "12", label: "Awards", sublabel: "Industry recognition", direction: "right" },
+              { value: "24/7", label: "Disponibilidad", sublabel: "Asistencia legal continua", direction: "right" },
+              { value: "<2 min", label: "Tiempo de respuesta", sublabel: "Para primeras orientaciones", direction: "left" },
+              { value: "100%", label: "Tono humano", sublabel: "Comunicación clara y empática", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) {
@@ -62,17 +63,17 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               return (
                 <div
                   key={i}
-                  className={`flex items-baseline gap-4 border-l border-foreground/30 pl-4 transition-all duration-700 md:gap-8 md:pl-8 ${getRevealClass()}`}
+                  className={`flex items-baseline gap-4 border-l border-brand-lavanda/45 pl-4 transition-all duration-700 md:gap-8 md:pl-8 ${getRevealClass()}`}
                   style={{
                     transitionDelay: `${300 + i * 150}ms`,
                     marginLeft: i % 2 === 0 ? "0" : "auto",
                     maxWidth: i % 2 === 0 ? "100%" : "85%",
                   }}
                 >
-                  <div className="text-3xl font-light text-foreground md:text-6xl lg:text-7xl">{stat.value}</div>
+                   <div className="text-3xl font-semibold text-foreground md:text-6xl lg:text-7xl">{stat.value}</div>
                   <div>
-                    <div className="font-sans text-base font-light text-foreground md:text-xl">{stat.label}</div>
-                    <div className="font-mono text-xs text-foreground/60">{stat.sublabel}</div>
+                     <div className="font-sans text-base font-medium text-foreground md:text-xl">{stat.label}</div>
+                     <div className="text-xs text-foreground/70">{stat.sublabel}</div>
                   </div>
                 </div>
               )
@@ -87,10 +88,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "750ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Start a Project
+            Hablar con LidiA
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            View Our Work
+            Ver soluciones
           </MagneticButton>
         </div>
       </div>

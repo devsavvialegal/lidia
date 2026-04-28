@@ -16,34 +16,34 @@ export function ServicesSection() {
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Capabilities
+          <h2 className="mb-2 font-sans text-5xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+            Capacidades LidiA
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ What we bring to the table</p>
+          <p className="text-sm text-foreground/70 md:text-base">Automatización útil, lenguaje humano y criterio legal</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Creative Development",
-              description: "Pushing the boundaries of what's possible on the web",
-              direction: "top",
-            },
-            {
-              title: "Visual Design",
-              description: "Crafting memorable experiences through thoughtful aesthetics",
-              direction: "right",
-            },
-            {
-              title: "Motion & Animation",
-              description: "Bringing interfaces to life with purposeful movement",
-              direction: "left",
-            },
-            {
-              title: "Technical Strategy",
-              description: "Building scalable solutions that perform beautifully",
-              direction: "bottom",
-            },
+               title: "Análisis documental asistido",
+               description: "Extrae puntos críticos de contratos, escritos y políticas en minutos",
+               direction: "top",
+             },
+             {
+               title: "Respuestas en lenguaje claro",
+               description: "Convierte complejidad jurídica en orientación entendible para cualquier área",
+               direction: "right",
+             },
+             {
+               title: "Criterio trazable",
+               description: "Cada respuesta mantiene contexto y referencias para decidir con confianza",
+               direction: "left",
+             },
+             {
+               title: "Integración con operación",
+               description: "Se adapta a procesos de estudio, in-house y equipos de compliance",
+               direction: "bottom",
+             },
           ].map((service, i) => (
             <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
           ))}
@@ -82,16 +82,16 @@ function ServiceCard({
 
   return (
     <div
-      className={`group transition-all duration-700 ${getRevealClass()}`}
+      className={`group rounded-2xl border border-foreground/12 bg-foreground/5 p-5 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:p-6 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
       }}
     >
       <div className="mb-3 flex items-center gap-3">
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
-        <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
+        <span className="text-xs text-foreground/60">0{index + 1}</span>
       </div>
-      <h3 className="mb-2 font-sans text-2xl font-light text-foreground md:text-3xl">{service.title}</h3>
+      <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground md:text-3xl">{service.title}</h3>
       <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
     </div>
   )
