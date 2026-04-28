@@ -18,7 +18,7 @@ export default function Home() {
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
-  const scrollThrottleRef = useRef<number>()
+  const scrollThrottleRef = useRef<number | null>(null)
 
   useEffect(() => {
     const checkShaderReady = () => {
@@ -142,7 +142,7 @@ export default function Home() {
 
       scrollThrottleRef.current = requestAnimationFrame(() => {
         if (!scrollContainerRef.current) {
-          scrollThrottleRef.current = undefined
+          scrollThrottleRef.current = null
           return
         }
 
@@ -154,7 +154,7 @@ export default function Home() {
           setCurrentSection(newSection)
         }
 
-        scrollThrottleRef.current = undefined
+        scrollThrottleRef.current = null
       })
     }
 
@@ -219,7 +219,7 @@ export default function Home() {
         }`}
       >
         <button onClick={() => scrollToSection(0)} className="flex items-center gap-2 transition-transform hover:scale-105">
-          <div className="flex items-center gap-3 rounded-2xl border border-foreground/15 bg-foreground/8 px-3 py-2 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-foreground/12">
+          <div className="flex items-center gap-3 rounded-2xl border border-foreground/15 bg-foreground/8 py-1 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-foreground/12">
             <Image
               src="/lidia-logo-white.png"
               alt="LidiA Legaltech"
@@ -232,7 +232,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Inicio", "Soluciones", "Capacidades", "Nosotros", "Contacto"].map((item, index) => (
+          {["Inicio", "Servicios", "Cómo funciona", "Alcance", "Contacto"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -251,7 +251,7 @@ export default function Home() {
         </div>
 
         <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Solicitar demo
+          Hablar con lidIA
         </MagneticButton>
       </nav>
 
@@ -267,29 +267,26 @@ export default function Home() {
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-brand-lavanda/45 bg-foreground/10 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="text-xs font-medium text-foreground/90">Asistente legal inteligente para equipos modernos</p>
+              <p className="text-xs font-medium text-foreground/90">Tu asistente legal para diligenciamiento automatizado de documentos</p>
             </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
+            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:text-7xl">
               <span className="text-balance">
-                Claridad legal
-                <br />
-                en segundos,
-                <br />
-                para personas reales
+                Genera tu documento legal
+                <br /> en minutos con lidIA.
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                LidiA Legaltech transforma textos complejos en respuestas simples, confiables y accionables para tu
-                equipo, sin perder precisión jurídica.
+                Compartes los datos y LidIA se encarga del diligenciamiento automático en minutas curadas por nuestros abogados.
+                sin vueltas, rápido, claro y confiable.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
-                Agendar una demo
+                Empezar por WhatsApp
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(2)}>
-                Ver capacidades
+                Cómo funciona
               </MagneticButton>
             </div>
           </div>

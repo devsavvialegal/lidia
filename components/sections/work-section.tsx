@@ -17,32 +17,32 @@ export function WorkSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Soluciones destacadas
+            Soluciones disponibles hoy
           </h2>
-          <p className="text-sm text-foreground/70 md:text-base">Cómo LidiA acompaña tareas legales reales</p>
+          <p className="text-sm text-foreground/70 md:text-base">Elige el servicio que necesitas y empieza a hablar con lidIA</p>
         </div>
 
         <div className="space-y-6 md:space-y-8">
           {[
             {
               number: "01",
-              title: "Resúmenes de contratos en lenguaje claro",
-              category: "Lectura asistida para equipos no legales",
-              year: "En uso",
+               title: "Derechos de petición",
+                category: "Salud, solicitud de información y solicitud de copias",
+               year: "Activo",
               direction: "left",
             },
             {
               number: "02",
-              title: "Detección de riesgos y cláusulas sensibles",
-              category: "Priorización inteligente para revisión jurídica",
-              year: "Piloto",
+               title: "Contrato por prestación de servicios",
+                category: "Diligenciamiento automatizado de minuta de servicios",
+               year: "Activo",
               direction: "right",
             },
             {
               number: "03",
-              title: "Respuestas legales con contexto verificable",
-              category: "IA con trazabilidad y confianza",
-              year: "Roadmap",
+               title: "Contratos laborales",
+               category: "Contratos a término definido e indefinido",
+               year: "Activo",
               direction: "left",
             },
           ].map((project, i) => (

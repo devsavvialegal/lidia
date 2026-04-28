@@ -1,36 +1,40 @@
-"use client"
+"use client";
 
-import { Mail, MapPin } from "lucide-react"
-import { useReveal } from "@/hooks/use-reveal"
-import { useState, type FormEvent } from "react"
-import { MagneticButton } from "@/components/magnetic-button"
+import { Mail, MapPin } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
+import { useState, type FormEvent } from "react";
+import { MagneticButton } from "@/components/magnetic-button";
 
 export function ContactSection() {
-  const { ref, isVisible } = useReveal(0.3)
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
+  const { ref, isVisible } = useReveal(0.3);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      return
+      return;
     }
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     // Simulate form submission (replace with actual API call later)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setFormData({ name: "", email: "", message: "" });
 
     // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
-  }
+    setTimeout(() => setSubmitSuccess(false), 5000);
+  };
 
   return (
     <section
@@ -42,19 +46,29 @@ export function ContactSection() {
           <div className="flex flex-col justify-center">
             <div
               className={`mb-6 transition-all duration-700 md:mb-12 ${
-                isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-12 opacity-0"
               }`}
             >
               <h2 className="mb-2 font-sans text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
-                Hablemos de
+                Empieza tu
                 <br />
-                tu desafío legal
+                proceso con
+                <br />
+                LidIA
               </h2>
-              <p className="text-xs text-foreground/70 md:text-base">Conocé cómo LidiA puede ayudarte desde el día uno</p>
+              <p className="text-xs text-foreground/70 md:text-base">
+                Te explicamos el servicio y te ayudamos a iniciar por WhatsApp
+              </p>
+              <p className="mt-2 max-w-md text-xs text-foreground/60 md:text-sm">
+                La generación y entrega del documento se realiza dentro del
+                proceso comercial, posterior a confirmación de pago.
+              </p>
             </div>
 
             <div className="space-y-4 md:space-y-8">
-              <a
+              {/* <a
                 href="mailto:hola@lidia.legal"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
@@ -68,28 +82,33 @@ export function ContactSection() {
                 <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
                   hola@lidia.legal
                 </p>
-              </a>
+              </a> */}
 
               <div
                 className={`transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-12 opacity-0"
                 }`}
                 style={{ transitionDelay: "350ms" }}
               >
                 <div className="mb-1 flex items-center gap-2">
-                  <MapPin className="h-3 w-3 text-foreground/60" />
-                  <span className="text-xs text-foreground/60">Base</span>
+                  <MapPin className="h-5 w-5 text-foreground/80" />
+                  <p className="text-sm text-foreground/80">
+                    Operamos en toda Colombia, <br /> con atención 24/7 para cada cliente simultáneo
+                  </p>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">LatAm · Remoto</p>
               </div>
 
               <div
                 className={`flex gap-2 pt-2 transition-all duration-700 md:pt-4 ${
-                  isVisible ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-8 opacity-0"
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                {["LinkedIn", "X", "YouTube", "Newsletter"].map((social) => (
+                {["WhatsApp"].map((social) => (
                   <a
                     key={social}
                     href="#"
@@ -104,35 +123,50 @@ export function ContactSection() {
 
           {/* Right side - Minimal form */}
           <div className="flex flex-col justify-center">
-            <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-foreground/12 bg-foreground/5 p-5 backdrop-blur-sm md:space-y-6 md:p-7">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 rounded-2xl border border-foreground/12 bg-foreground/5 p-5 backdrop-blur-sm md:space-y-6 md:p-7"
+            >
               <div
                 className={`transition-all duration-700 ${
-                  isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                <label className="mb-1 block text-xs text-foreground/70 md:mb-2">Nombre</label>
+                <label className="mb-1 block text-xs text-foreground/70 md:mb-2">
+                  Nombre
+                </label>
                 <input
                   type="text"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="Tu nombre"
+                  placeholder="Nombre completo"
                 />
               </div>
 
               <div
                 className={`transition-all duration-700 ${
-                  isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "350ms" }}
               >
-                <label className="mb-1 block text-xs text-foreground/70 md:mb-2">Email</label>
+                <label className="mb-1 block text-xs text-foreground/70 md:mb-2">
+                  Email
+                </label>
                 <input
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
                   placeholder="your@email.com"
@@ -141,24 +175,32 @@ export function ContactSection() {
 
               <div
                 className={`transition-all duration-700 ${
-                  isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                <label className="mb-1 block text-xs text-foreground/70 md:mb-2">Mensaje</label>
+                <label className="mb-1 block text-xs text-foreground/70 md:mb-2">
+                  Mensaje
+                </label>
                 <textarea
                   rows={3}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="Contanos tu necesidad legal o de compliance..."
+                  placeholder="Indica qué documento necesitas y te contactamos para iniciar..."
                 />
               </div>
 
               <div
                 className={`transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-12 opacity-0"
                 }`}
                 style={{ transitionDelay: "650ms" }}
               >
@@ -168,10 +210,12 @@ export function ContactSection() {
                   className="w-full disabled:opacity-50"
                   onClick={isSubmitting ? undefined : undefined}
                 >
-                  {isSubmitting ? "Enviando..." : "Enviar consulta"}
+                  {isSubmitting ? "Enviando..." : "Quiero más información"}
                 </MagneticButton>
                 {submitSuccess && (
-                  <p className="mt-3 text-center text-sm text-foreground/80">Mensaje enviado. Te respondemos a la brevedad.</p>
+                  <p className="mt-3 text-center text-sm text-foreground/80">
+                    Mensaje enviado. Te contactamos para continuar por WhatsApp.
+                  </p>
                 )}
               </div>
             </form>
@@ -179,5 +223,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
