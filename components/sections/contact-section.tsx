@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { useState, type FormEvent } from "react";
 import { MagneticButton } from "@/components/magnetic-button";
@@ -39,10 +39,10 @@ export function ContactSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-4 pt-20 md:px-12 md:pt-0 lg:px-16"
+      className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-4 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
+        <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
           <div className="flex flex-col justify-center">
             <div
               className={`mb-6 transition-all duration-700 md:mb-12 ${
@@ -51,7 +51,7 @@ export function ContactSection() {
                   : "-translate-x-12 opacity-0"
               }`}
             >
-              <h2 className="mb-2 font-sans text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
+              <h2 className="mb-2 font-sans text-3xl font-semibold leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
                 Empieza tu
                 <br />
                 proceso con
@@ -67,7 +67,7 @@ export function ContactSection() {
               </p>
             </div>
 
-            <div className="space-y-4 md:space-y-8">
+            <div className="space-y-3 md:space-y-8">
               {/* <a
                 href="mailto:hola@lidia.legal"
                 className={`group block transition-all duration-700 ${
@@ -93,15 +93,26 @@ export function ContactSection() {
                 style={{ transitionDelay: "350ms" }}
               >
                 <div className="mb-1 flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-foreground/80" />
-                  <p className="text-sm text-foreground/80">
-                    Operamos en toda Colombia, <br /> con atención 24/7 para cada cliente simultáneo
+                  <MapPin className="h-4 w-4 text-foreground/80 md:h-5 md:w-5" />
+                  <p className="text-xs text-foreground/80 md:text-sm">
+                    Operamos en toda Colombia, <br /> con atención 24/7 para
+                    cada cliente simultáneo
                   </p>
                 </div>
               </div>
 
+              <div className="rounded-2xl border border-foreground/12 bg-foreground/5 p-3 mt-6 backdrop-blur-sm md:hidden">
+                <p className="mb-3 text-xs text-foreground/75">
+                  Para iniciar, escribinos por WhatsApp y te guiamos paso a
+                  paso.
+                </p>
+                <MagneticButton variant="primary" size="lg" className="w-full">
+                  Hablar con lidIA
+                </MagneticButton>
+              </div>
+
               <div
-                className={`flex gap-2 pt-2 transition-all duration-700 md:pt-4 ${
+                className={`hidden gap-2 pt-2 transition-all duration-700 md:pt-4 sm:flex ${
                   isVisible
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-8 opacity-0"
@@ -122,7 +133,7 @@ export function ContactSection() {
           </div>
 
           {/* Right side - Minimal form */}
-          <div className="flex flex-col justify-center">
+          <div className="hidden flex-col justify-center md:flex">
             <form
               onSubmit={handleSubmit}
               className="space-y-4 rounded-2xl border border-foreground/12 bg-foreground/5 p-5 backdrop-blur-sm md:space-y-6 md:p-7"

@@ -8,7 +8,7 @@ export function ServicesSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
+      className="flex h-[100dvh] w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-5 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
@@ -18,7 +18,7 @@ export function ServicesSection() {
               : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-2 font-sans text-3xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
             Así funciona LidIA
           </h2>
           <p className="text-sm text-foreground/70 md:text-base">
@@ -26,7 +26,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
               title: "1) Conversación guiada por WhatsApp",
@@ -95,7 +95,7 @@ function ServiceCard({
 
   return (
     <div
-      className={`group rounded-2xl border border-foreground/12 bg-foreground/5 p-5 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:p-6 ${getRevealClass()}`}
+      className={`group rounded-2xl border border-foreground/12 bg-foreground/5 p-4 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:p-6 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
       }}
@@ -104,10 +104,10 @@ function ServiceCard({
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
         <span className="text-xs text-foreground/60">0{index + 1}</span>
       </div>
-      <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground md:text-3xl">
+      <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:mb-2 md:text-3xl">
         {service.title}
       </h3>
-      <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">
+      <p className="max-w-sm text-xs leading-relaxed text-foreground/80 md:text-base">
         {service.description}
       </p>
     </div>

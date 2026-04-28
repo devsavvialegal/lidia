@@ -15,8 +15,6 @@ export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const touchStartY = useRef(0)
-  const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
   const scrollThrottleRef = useRef<number | null>(null)
 
@@ -62,50 +60,11 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY
-      touchStartX.current = e.touches[0].clientX
-    }
+    const desktopMediaQuery = window.matchMedia("(min-width: 768px) and (pointer: fine)")
 
-    const handleTouchMove = (e: TouchEvent) => {
-      if (Math.abs(e.touches[0].clientY - touchStartY.current) > 10) {
-        e.preventDefault()
-      }
-    }
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      const touchEndY = e.changedTouches[0].clientY
-      const touchEndX = e.changedTouches[0].clientX
-      const deltaY = touchStartY.current - touchEndY
-      const deltaX = touchStartX.current - touchEndX
-
-      if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 4) {
-          scrollToSection(currentSection + 1)
-        } else if (deltaY < 0 && currentSection > 0) {
-          scrollToSection(currentSection - 1)
-        }
-      }
-    }
-
-    const container = scrollContainerRef.current
-    if (container) {
-      container.addEventListener("touchstart", handleTouchStart, { passive: true })
-      container.addEventListener("touchmove", handleTouchMove, { passive: false })
-      container.addEventListener("touchend", handleTouchEnd, { passive: true })
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("touchstart", handleTouchStart)
-        container.removeEventListener("touchmove", handleTouchMove)
-        container.removeEventListener("touchend", handleTouchEnd)
-      }
-    }
-  }, [currentSection])
-
-  useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      if (!desktopMediaQuery.matches) return
+
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault()
 
@@ -174,7 +133,7 @@ export default function Home() {
   }, [currentSection])
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-background">
+    <main className="relative h-dvh w-full overflow-hidden bg-background">
       <CustomCursor />
       <GrainOverlay />
 
@@ -210,11 +169,11 @@ export default function Home() {
             opacity={0.97}
           />
         </Shader>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/70 via-brand-navy/55 to-brand-purple/35" />
+        <div className="absolute inset-0 bg-linear-to-br from-brand-navy/70 via-brand-navy/55 to-brand-purple/35" />
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-opacity duration-700 md:px-12 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-4 transition-opacity duration-700 md:px-12 md:py-6 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -226,7 +185,7 @@ export default function Home() {
               width={108}
               height={40}
               priority
-              className="h-8 w-auto md:h-9"
+              className="h-7 w-auto md:h-9"
             />
           </div>
         </button>
@@ -250,7 +209,7 @@ export default function Home() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
+        <MagneticButton variant="secondary" className="hidden md:inline-flex" onClick={() => scrollToSection(4)}>
           Hablar con lidIA
         </MagneticButton>
       </nav>
@@ -258,30 +217,30 @@ export default function Home() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex h-screen overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${
+        className={`relative z-10 flex h-dvh snap-x snap-mandatory overflow-x-auto overflow-y-hidden transition-opacity duration-700 md:snap-none ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
       >
         {/* Hero Section */}
-        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
+        <section className="flex h-dvh w-screen shrink-0 snap-start flex-col justify-center overflow-y-auto overscroll-y-contain px-5 pb-10 pt-20 md:justify-end md:min-h-screen md:overflow-visible md:px-12 md:pb-24 md:pt-24">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-brand-lavanda/45 bg-foreground/10 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="text-xs font-medium text-foreground/90">Tu asistente legal para diligenciamiento automatizado de documentos</p>
             </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:text-7xl">
+            <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-[2.15rem] font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:mb-6 md:text-7xl">
               <span className="text-balance">
                 Genera tu documento legal
                 <br /> en minutos con lidIA.
               </span>
             </h1>
-            <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
+            <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
                 Compartes los datos y LidIA se encarga del diligenciamiento automático en minutas curadas por nuestros abogados.
                 sin vueltas, rápido, claro y confiable.
               </span>
             </p>
-            <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
+            <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
                 Empezar por WhatsApp
               </MagneticButton>
@@ -291,11 +250,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500">
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500 md:bottom-8">
             <div className="flex items-center gap-2">
-              <p className="text-xs text-foreground/80">Deslizá para explorar</p>
-              <div className="flex h-6 w-12 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-foreground/80" />
+              <p className="text-xs text-foreground/80">Desliza para explorar</p>
+              <div className="relative flex h-6 w-12 items-center rounded-full border border-foreground/20 bg-foreground/15 px-1 backdrop-blur-md">
+                <div className="slide-hint-dot">
+                  <div className="h-2 w-2 animate-pulse rounded-full bg-foreground/100" />
+                </div>
               </div>
             </div>
           </div>
@@ -310,6 +271,20 @@ export default function Home() {
       <style jsx global>{`
         div::-webkit-scrollbar {
           display: none;
+        }
+
+        .slide-hint-dot {
+          animation: slideHint 1.6s ease-in-out infinite;
+        }
+
+        @keyframes slideHint {
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(24px);
+          }
         }
       `}</style>
     </main>
