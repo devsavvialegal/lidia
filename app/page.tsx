@@ -236,7 +236,7 @@ export default function Home() {
             </h1>
             <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                Compartes los datos y LidIA se encarga del diligenciamiento automático en minutas curadas por nuestros abogados.
+                Comparte los datos con LidIA y ella se encarga del diligenciamiento automátizado en minutas curadas por nuestros abogados.
                 sin vueltas, rápido, claro y confiable.
               </span>
             </p>
