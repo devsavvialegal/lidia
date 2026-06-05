@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { useState, type FormEvent } from "react";
@@ -39,6 +40,7 @@ export function ContactSection() {
   return (
     <section
       ref={ref}
+      id="contacto"
       className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-4 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
@@ -128,7 +130,20 @@ export function ContactSection() {
                     {social}
                   </a>
                 ))}
+                <Link
+                  href="/politica-de-privacidad"
+                  className="border-b border-transparent text-xs text-foreground/60 transition-all hover:border-foreground/60 hover:text-foreground/90"
+                >
+                  Privacidad
+                </Link>
               </div>
+
+              <Link
+                href="/politica-de-privacidad"
+                className="mt-4 inline-flex text-xs text-foreground/65 underline decoration-foreground/25 underline-offset-4 transition-colors hover:text-foreground/90 md:hidden"
+              >
+                Ver politica de privacidad
+              </Link>
             </div>
           </div>
 
