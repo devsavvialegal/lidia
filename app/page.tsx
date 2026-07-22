@@ -209,7 +209,13 @@ export default function Home() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" className="hidden md:inline-flex" onClick={() => scrollToSection(4)}>
+        <MagneticButton
+          href="https://wa.me/573115777094"
+          target="_blank"
+          rel="noreferrer"
+          variant="secondary"
+          className="hidden md:inline-flex"
+        >
           Hablar con lidIA
         </MagneticButton>
       </nav>
