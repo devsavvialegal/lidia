@@ -124,7 +124,9 @@ export function ContactSection() {
                 {["WhatsApp"].map((social) => (
                   <a
                     key={social}
-                    href="#"
+                    href="https://wa.me/573115777094"
+                    target="_blank"
+                    rel="noreferrer"
                     className="border-b border-transparent text-xs text-foreground/60 transition-all hover:border-foreground/60 hover:text-foreground/90"
                   >
                     {social}
