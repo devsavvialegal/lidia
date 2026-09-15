@@ -210,7 +210,7 @@ export default function Home() {
         </div>
 
         <MagneticButton
-          href="https://wa.me/573115777094"
+          href="https://wa.me/573115777094?text=Hola%20lidIA%2C%20quiero%20generar%20un%20documento"
           target="_blank"
           rel="noreferrer"
           variant="secondary"
