@@ -105,7 +105,7 @@ export function ContactSection() {
 
               <div className="rounded-2xl border border-foreground/12 bg-foreground/5 p-3 mt-6 backdrop-blur-sm md:hidden">
                 <p className="mb-3 text-xs text-foreground/75">
-                  Para iniciar, escribinos por WhatsApp y te guiamos paso a
+                  Para iniciar, escríbenos por WhatsApp y te guiamos paso a
                   paso.
                 </p>
                 <MagneticButton variant="primary" size="lg" className="w-full">
