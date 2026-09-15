@@ -15,53 +15,53 @@ const policySections = [
   {
     title: "2. Datos que recolectamos",
     items: [
-      "Datos de identificacion: nombre completo, tipo y numero de documento de identidad.",
-      "Datos de contacto: correo electronico, numero de telefono o celular y direccion de correspondencia fisica o digital.",
-      "Datos del caso: descripcion de la situacion, entidades o terceros involucrados y documentos de soporte que decidas cargar.",
-      "Datos sensibles: en casos como salud o informacion de menores, LidIA solo tratara estos datos con tu consentimiento explicito para la formulacion del documento.",
+      "Datos de identificación: nombre completo, tipo y número de documento de identidad.",
+      "Datos de contacto: correo electrónico, número de teléfono o celular y dirección de correspondencia física o digital.",
+      "Datos del caso: descripción de la situación, entidades o terceros involucrados y documentos de soporte que decidas cargar.",
+      "Datos sensibles: en casos como salud o información de menores, LidIA solo tratará estos datos con tu consentimiento explícito para la formulación del documento.",
     ],
   },
   {
     title: "3. Finalidad del tratamiento",
     items: [
       "Estructurar, redactar y personalizar el documento legal solicitado.",
-      "Enviar recordatorios sobre vencimientos o actuaciones asociadas a tus tramites, cuando aplique.",
-      "Brindar soporte tecnico y mejorar la experiencia de uso de LidIA.",
+      "Enviar recordatorios sobre vencimientos o actuaciones asociadas a tus trámites, cuando aplique.",
+      "Brindar soporte técnico y mejorar la experiencia de uso de LidIA.",
     ],
-    note: "LidIA no vende, no alquila y no comparte tus datos personales ni la informacion de tus casos con terceras empresas con fines comerciales o publicitarios.",
+    note: "LidIA no vende, no alquila y no comparte tus datos personales ni la información de tus casos con terceras empresas con fines comerciales o publicitarios.",
   },
   {
     title: "4. Derechos del titular",
     items: [
       "Conocer, actualizar y rectificar tus datos personales cuando sean inexactos o incompletos.",
-      "Solicitar la supresion de tus datos o revocar la autorizacion cuando proceda legalmente.",
-      "Ser informado sobre el uso que se ha dado a tu informacion.",
+      "Solicitar la supresión de tus datos o revocar la autorización cuando proceda legalmente.",
+      "Ser informado sobre el uso que se ha dado a tu información.",
     ],
   },
   {
-    title: "5. Como protegemos tu informacion",
+    title: "5. Cómo protegemos tu información",
     content: [
-      "Implementamos medidas de seguridad tecnicas, humanas y administrativas para evitar acceso no autorizado, perdida, adulteracion o consulta indebida de tu informacion.",
-      "Los datos de navegacion y los textos generados se transmiten y almacenan bajo estandares razonables de seguridad.",
+      "Implementamos medidas de seguridad técnicas, humanas y administrativas para evitar acceso no autorizado, pérdida, adulteración o consulta indebida de tu información.",
+      "Los datos de navegación y los textos generados se transmiten y almacenan bajo estándares razonables de seguridad.",
     ],
   },
   {
-    title: "6. Canales de atencion para habeas data",
+    title: "6. Canales de atención para habeas data",
     content: [
-      "Si deseas consultar, actualizar, rectificar o eliminar tus datos de los sistemas de LidIA, puedes enviar una solicitud escrita a nuestro Oficial de Proteccion de Datos a traves de:",
+      "Si deseas consultar, actualizar, rectificar o eliminar tus datos de los sistemas de LidIA, puedes enviar una solicitud escrita a nuestro Oficial de Protección de Datos a través de:",
     ],
     items: [
-      "Correo electronico: [correo@tuempresa.com]",
+      "Correo electrónico: [correo@tuempresa.com]",
       "Asunto sugerido: Ejercicio de Derecho Habeas Data - LidIA",
-      "Las solicitudes seran resueltas dentro de los terminos legales aplicables.",
+      "Las solicitudes serán resueltas dentro de los términos legales aplicables.",
     ],
   },
 ]
 
 export const metadata: Metadata = {
-  title: "Politica de privacidad",
+  title: "Política de privacidad",
   description:
-    "Conoce como LidIA recolecta, usa y protege los datos personales tratados dentro de su experiencia de diligenciamiento automatizado.",
+    "Conoce cómo LidIA recolecta, usa y protege los datos personales tratados dentro de su experiencia de diligenciamiento automatizado.",
   alternates: {
     canonical: "/politica-de-privacidad",
   },
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
             <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
           </Link>
           <span className="group relative font-sans text-sm font-medium text-foreground">
-            Politica de privacidad
+            Política de privacidad
             <span className="absolute -bottom-1 left-0 h-px w-full bg-foreground transition-all duration-300" />
           </span>
         </div>
@@ -119,23 +119,23 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-foreground/55">
-              Politica de privacidad
+              Política de privacidad
             </p>
             <h1 className="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight text-foreground md:text-6xl">
-              Una explicacion clara sobre como LidIA usa y protege tu informacion.
+              Una explicación clara sobre cómo LidIA usa y protege tu información.
             </h1>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-foreground/72 md:text-base">
-              En LidIA tratamos los datos personales exclusivamente para el diligenciamiento automatizado de documentos y la gestion asociada a ese servicio. Esta pagina resume el alcance del tratamiento y los derechos del titular conforme a la Ley 1581 de 2012 en Colombia.
+              En LidIA tratamos los datos personales exclusivamente para el diligenciamiento automatizado de documentos y la gestión asociada a ese servicio. Esta página resume el alcance del tratamiento y los derechos del titular conforme a la Ley 1581 de 2012 en Colombia.
             </p>
-            <p className="mt-4 text-sm text-foreground/55">Ultima actualizacion: 06 de Junio 2026</p>
+            <p className="mt-4 text-sm text-foreground/55">Última actualización: 06 de Junio 2026</p>
           </div>
 
           <aside className="rounded-4xl border border-foreground/12 bg-foreground/5 p-6 backdrop-blur-xl md:p-7">
-            <p className="text-sm font-medium text-foreground/90">Resumen rapido</p>
+            <p className="text-sm font-medium text-foreground/90">Resumen rápido</p>
             <ul className="mt-5 space-y-4 text-sm leading-6 text-foreground/72">
-              <li className="border-b border-foreground/10 pb-4">Solo pedimos la informacion necesaria para diligenciar tu documento.</li>
+              <li className="border-b border-foreground/10 pb-4">Solo pedimos la información necesaria para diligenciar tu documento.</li>
               <li className="border-b border-foreground/10 pb-4">No compartimos casos ni datos con fines comerciales o publicitarios.</li>
-              <li>Siempre puedes ejercer tus derechos de consulta, actualizacion, rectificacion y supresion.</li>
+              <li>Siempre puedes ejercer tus derechos de consulta, actualización, rectificación y supresión.</li>
             </ul>
           </aside>
         </section>
@@ -176,10 +176,10 @@ export default function PrivacyPolicyPage() {
 
         <section className="mt-8 rounded-4xl border border-foreground/12 bg-foreground/6 p-6 backdrop-blur-xl md:mt-10 md:p-8">
           <p className="text-sm leading-7 text-foreground/72 md:text-[15px]">
-            Para interactuar con LidIA, la interfaz debe incluir una autorizacion previa, expresa e informada para el tratamiento de datos personales conforme a esta politica de privacidad.
+            Para interactuar con LidIA, la interfaz debe incluir una autorización previa, expresa e informada para el tratamiento de datos personales conforme a esta política de privacidad.
           </p>
           <div className="mt-5 inline-flex max-w-3xl rounded-2xl border border-foreground/14 bg-background/35 px-4 py-4 text-sm leading-7 text-foreground/82">
-            Autorizo de manera previa, expresa e informada a LidIA para el tratamiento de mis datos personales de acuerdo con su Politica de Privacidad. Entiendo que mis datos se usaran exclusivamente para la generacion de mis documentos legales y el seguimiento de mis tramites, cuando aplique.
+            Autorizo de manera previa, expresa e informada a LidIA para el tratamiento de mis datos personales de acuerdo con su Política de Privacidad. Entiendo que mis datos se usarán exclusivamente para la generación de mis documentos legales y el seguimiento de mis trámites, cuando aplique.
           </div>
         </section>
       </div>
