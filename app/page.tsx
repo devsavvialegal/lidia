@@ -9,6 +9,7 @@ import { ServicesSection } from "@/components/sections/services-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
+import { WHATSAPP_BOT_URL } from "@/lib/whatsapp"
 import { useRef, useEffect, useState } from "react"
 
 export default function Home() {
@@ -210,7 +211,7 @@ export default function Home() {
         </div>
 
         <MagneticButton
-          href="https://wa.me/573115777094?text=Hola%20lidIA%2C%20quiero%20generar%20un%20documento"
+          href={WHATSAPP_BOT_URL}
           target="_blank"
           rel="noreferrer"
           variant="secondary"

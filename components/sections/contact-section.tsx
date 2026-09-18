@@ -5,6 +5,7 @@ import { MapPin } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { useState, type FormEvent } from "react";
 import { MagneticButton } from "@/components/magnetic-button";
+import { WHATSAPP_BOT_URL } from "@/lib/whatsapp";
 
 export function ContactSection() {
   const { ref, isVisible } = useReveal(0.3);
@@ -124,7 +125,7 @@ export function ContactSection() {
                 {["WhatsApp"].map((social) => (
                   <a
                     key={social}
-                    href="https://wa.me/573115777094?text=Hola%20lidIA%2C%20quiero%20generar%20un%20documento"
+                    href={WHATSAPP_BOT_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="border-b border-transparent text-xs text-foreground/60 transition-all hover:border-foreground/60 hover:text-foreground/90"
