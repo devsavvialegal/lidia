@@ -8,7 +8,7 @@ export function WorkSection() {
   return (
     <section
       ref={ref}
-      className="flex h-[100dvh] w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-5 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
+      className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-5 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
@@ -26,24 +26,31 @@ export function WorkSection() {
           {[
             {
               number: "01",
-               title: "Derechos de petición",
-                category: "Salud, solicitud de información y solicitud de copias",
-               year: "Activo",
+              title: "Derechos de petición",
+              category: "Salud, solicitud de información y solicitud de copias",
+              year: "Activo",
               direction: "left",
             },
             {
               number: "02",
-               title: "Contrato por prestación de servicios",
-                category: "Diligenciamiento automatizado de minuta de servicios",
-               year: "Activo",
+              title: "Contrato por prestación de servicios",
+              category: "Diligenciamiento automatizado de minuta de servicios",
+              year: "Activo",
               direction: "right",
             },
             {
               number: "03",
-               title: "Contratos laborales",
-               category: "Contratos a término definido e indefinido",
-               year: "Activo",
+              title: "Contratos laborales",
+              category: "Contratos a término definido e indefinido",
+              year: "Activo",
               direction: "left",
+            },
+            {
+              number: "04",
+              title: "Contrato de arrendamiento",
+              category: "Diligenciamiento automatizado de contrato de arrendamiento",
+              year: "Activo",
+              direction: "right",
             },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />

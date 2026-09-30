@@ -61,9 +61,9 @@ export function AboutSection({
           <div className="flex flex-col justify-center space-y-3 md:space-y-12">
             {[
               {
-                value: "3",
+                value: "4",
                 label: "Servicios activos",
-                sublabel: "Peticiones, prestación de servicios y laborales",
+                sublabel: "Peticiones, prestación de servicios, laborales y arrendamiento",
                 direction: "right",
               },
               {
@@ -73,9 +73,9 @@ export function AboutSection({
                 direction: "left",
               },
               {
-                value: "?",
+                value: "∞",
                 label: "Asesoría jurídica",
-                sublabel: "No sustituye revisión profesional, podemos asignarte uno de nuestros abogados en caso de asesoría especializada",
+                sublabel: "No sustituye revisión profesional, podemos asignarte uno de nuestros abogados en caso de asesoría especializada en tu documento generado",
                 direction: "right",
               },
             ].map((stat, i) => {

@@ -178,15 +178,15 @@ export default function Home() {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <button onClick={() => scrollToSection(0)} className="flex items-center gap-2 transition-transform hover:scale-105">
-          <div className="flex items-center gap-3 rounded-2xl border border-foreground/15 bg-foreground/8 py-1 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-foreground/12">
+        <button onClick={() => scrollToSection(0)} className="flex items-center transition-transform hover:scale-105 md:origin-right">
+          <div className="flex items-center rounded-2xl transition-all duration-300 hover:scale-[1.02] md:origin-right">
             <Image
               src="/lidia-logo-white.png"
               alt="LidiA Legaltech"
               width={108}
               height={40}
               priority
-              className="h-7 w-auto md:h-9"
+              className="h-9 w-auto md:h-12"
             />
           </div>
         </button>
