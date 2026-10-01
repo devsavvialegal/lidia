@@ -290,7 +290,7 @@ const policySections: LegalSection[] = [
       "Si deseas consultar, actualizar, rectificar o eliminar tus datos de los sistemas de LidIA, puedes enviar una solicitud escrita a nuestro Oficial de Protección de Datos a través de:",
     ],
     items: [
-      "Correo electrónico: [correo@tuempresa.com]",
+      "Correo electrónico: contacto@lidialegal.co",
       "Asunto sugerido: Ejercicio de Derecho Habeas Data - LidIA",
       "Las solicitudes serán resueltas dentro de los términos legales aplicables.",
     ],
