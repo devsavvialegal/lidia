@@ -11,12 +11,24 @@ import { HeroSection } from "@/components/producto/hero-section"
 import { HowItWorksSection } from "@/components/producto/how-it-works-section"
 import { ProductoNav } from "@/components/producto/producto-nav"
 import { PAGE_META } from "@/content/producto"
+import { BASE_OPEN_GRAPH, BASE_TWITTER, SITE_NAME } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: PAGE_META.title,
   description: PAGE_META.description,
   alternates: {
     canonical: "/documentos-legales",
+  },
+  openGraph: {
+    ...BASE_OPEN_GRAPH,
+    url: "/documentos-legales",
+    title: `${PAGE_META.title} | ${SITE_NAME}`,
+    description: PAGE_META.description,
+  },
+  twitter: {
+    ...BASE_TWITTER,
+    title: `${PAGE_META.title} | ${SITE_NAME}`,
+    description: PAGE_META.description,
   },
 }
 

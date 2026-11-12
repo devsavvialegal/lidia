@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Epilogue, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { SITE_URL } from "@/lib/site"
+import { BASE_OPEN_GRAPH, BASE_TWITTER, SITE_URL } from "@/lib/site"
 import "./globals.css"
 
 const epilogue = Epilogue({
@@ -63,28 +63,17 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
-    type: "website",
-    locale: "es_CO",
+    ...BASE_OPEN_GRAPH,
     url: SITE_URL,
-    siteName: "LidIA Legal co",
     title: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
     description:
       "Genera derechos de petición y contratos por WhatsApp con flujos automatizados, minutas predefinidas y diligenciamiento guiado.",
-    images: [
-      {
-        url: "/SEO.jpg",
-        width: 1916,
-        height: 943,
-        alt: "LidIA Legal co, Agente de generación de documentos legales vía WhatsApp con diligenciamiento guiado.",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    ...BASE_TWITTER,
     title: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
     description:
       "Genera derechos de petición y contratos por WhatsApp con flujos automatizados, minutas predefinidas y diligenciamiento guiado.",
-    images: ["/SEO.jpg"],
   },
   category: "legal technology",
 }
