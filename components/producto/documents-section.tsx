@@ -70,10 +70,10 @@ function DocumentCard({ doc }: { doc: LegalDocument }) {
             href={buildWhatsappUrl(doc.whatsappText)}
             target="_blank"
             rel="noreferrer"
-            className="flex w-full items-center justify-center gap-1 rounded-full border border-brand-lavanda/30 bg-foreground/5 px-6 py-2.5 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-brand-lavanda/55 hover:bg-foreground/10"
+            className="flex w-full items-center justify-center gap-1 rounded-full text-center border border-brand-lavanda/30 bg-foreground/5 px-6 py-2.5 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-brand-lavanda/55 hover:bg-foreground/10"
           >
             {doc.ctaLabel}
-            <ChevronRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
       </div>
