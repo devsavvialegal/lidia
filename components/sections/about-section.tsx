@@ -61,9 +61,9 @@ export function AboutSection({
           <div className="flex flex-col justify-center space-y-3 md:space-y-12 short:space-y-6 tiny:space-y-4">
             {[
               {
-                value: "4",
+                value: "5",
                 label: "Servicios activos",
-                sublabel: "Peticiones, prestación de servicios, laborales y arrendamiento",
+                sublabel: "Peticiones, prestación de servicios, laborales, arrendamiento y alimentos",
                 direction: "right",
               },
               {
