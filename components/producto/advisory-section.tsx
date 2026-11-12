@@ -4,7 +4,7 @@ import { MagneticButton } from "@/components/magnetic-button"
 import { ImageSlot } from "@/components/producto/image-slot"
 import { ADVISORY } from "@/content/producto"
 import { LAWYER_CONSULTATION } from "@/content/services"
-import { formatCop } from "@/lib/format"
+import { CURRENCY_CODE, formatCop } from "@/lib/format"
 import { buildSupportWhatsappUrl, buildWhatsappUrl } from "@/lib/whatsapp"
 
 export function AdvisorySection() {
@@ -38,6 +38,7 @@ export function AdvisorySection() {
                 </span>
                 <span className="font-sans text-2xl font-semibold text-foreground">
                   {formatCop(LAWYER_CONSULTATION.priceCop)}
+                  <span className="ml-1.5 text-sm font-medium text-foreground/70">{CURRENCY_CODE}</span>
                 </span>
               </p>
               <p className="mb-6 text-xs text-foreground/55">{ADVISORY.note}</p>

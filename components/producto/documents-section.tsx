@@ -3,7 +3,7 @@ import { Briefcase, ChevronRight, FileSignature, FileText, House, Users, type Lu
 import { ImageSlot } from "@/components/producto/image-slot"
 import { DOCUMENTS, type DocumentIconKey, type LegalDocument } from "@/content/documents"
 import { DOCUMENTS_SECTION } from "@/content/producto"
-import { formatCop } from "@/lib/format"
+import { CURRENCY_CODE, formatCop } from "@/lib/format"
 import { buildWhatsappUrl } from "@/lib/whatsapp"
 
 const documentIcons: Record<DocumentIconKey, LucideIcon> = {
@@ -69,6 +69,7 @@ function DocumentCard({ doc }: { doc: LegalDocument }) {
       <p className="self-end px-5 pt-6 text-center">
         <span className="inline-block rounded-full bg-brand-purple/20 px-6 py-2 font-sans text-2xl font-semibold text-foreground">
           {formatCop(doc.priceCop)}
+          <span className="ml-1.5 text-sm font-medium text-foreground/70">{CURRENCY_CODE}</span>
         </span>
       </p>
 

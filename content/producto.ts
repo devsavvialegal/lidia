@@ -4,7 +4,7 @@
  */
 
 import { LAWYER_CONSULTATION } from "@/content/services"
-import { formatCop } from "@/lib/format"
+import { CURRENCY_CODE, formatCop } from "@/lib/format"
 
 export const PAGE_META = {
   title: "Documentos legales por WhatsApp",
@@ -152,7 +152,7 @@ export const FAQ = {
     },
     {
       question: "¿LidIA me brinda asesoría jurídica?",
-      answer: `No. Pero al entregarte tu documento legal puedes contratar una asesoría de 45 minutos con uno de nuestros abogados por ${formatCop(LAWYER_CONSULTATION.priceCop)}, para revisarlo y resolver las dudas sobre él.`,
+      answer: `No. Pero al entregarte tu documento legal puedes contratar una asesoría de 45 minutos con uno de nuestros abogados por ${formatCop(LAWYER_CONSULTATION.priceCop)} ${CURRENCY_CODE}, para revisarlo y resolver las dudas sobre él.`,
     },
     {
       question: "¿Cuánto tarda la entrega del documento?",
