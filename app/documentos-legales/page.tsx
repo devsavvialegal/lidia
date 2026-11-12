@@ -13,6 +13,13 @@ import { ProductoNav } from "@/components/producto/producto-nav"
 import { PAGE_META } from "@/content/producto"
 import { BASE_OPEN_GRAPH, BASE_TWITTER, SITE_NAME } from "@/lib/site"
 
+const OG_IMAGE = {
+  url: "/SEO-documentos-legales-lidia.jpg",
+  width: 1200,
+  height: 594,
+  alt: "Landing de LidIA: tus documentos legales, rápidos, seguros y desde tu celular",
+}
+
 export const metadata: Metadata = {
   title: PAGE_META.title,
   description: PAGE_META.description,
@@ -24,11 +31,13 @@ export const metadata: Metadata = {
     url: "/documentos-legales",
     title: `${PAGE_META.title} | ${SITE_NAME}`,
     description: PAGE_META.description,
+    images: [OG_IMAGE],
   },
   twitter: {
     ...BASE_TWITTER,
     title: `${PAGE_META.title} | ${SITE_NAME}`,
     description: PAGE_META.description,
+    images: [OG_IMAGE.url],
   },
 }
 
