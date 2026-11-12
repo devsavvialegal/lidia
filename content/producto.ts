@@ -9,7 +9,7 @@ import { formatCop } from "@/lib/format"
 export const PAGE_META = {
   title: "Documentos legales por WhatsApp",
   description:
-    "Crea contratos de arrendamiento, laborales, de prestación de servicios y derechos de petición desde tu celular, con minutas curadas por abogados colombianos.",
+    "Crea contratos de arrendamiento, laborales, de prestación de servicios, derechos de petición y denuncias por inasistencia alimentaria desde tu celular, con minutas curadas por abogados colombianos.",
 } as const
 
 export const HERO = {

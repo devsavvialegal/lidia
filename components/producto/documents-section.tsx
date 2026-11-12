@@ -1,4 +1,4 @@
-import { Briefcase, ChevronRight, FileSignature, FileText, House, type LucideIcon } from "lucide-react"
+import { Briefcase, ChevronRight, FileSignature, FileText, House, Users, type LucideIcon } from "lucide-react"
 
 import { ImageSlot } from "@/components/producto/image-slot"
 import { DOCUMENTS, type DocumentIconKey, type LegalDocument } from "@/content/documents"
@@ -11,6 +11,7 @@ const documentIcons: Record<DocumentIconKey, LucideIcon> = {
   briefcase: Briefcase,
   "file-signature": FileSignature,
   "file-text": FileText,
+  users: Users,
 }
 
 export function DocumentsSection() {
@@ -22,10 +23,16 @@ export function DocumentsSection() {
           <span className="text-brand-lavanda">{DOCUMENTS_SECTION.title.highlight}</span>
         </h2>
 
-        {/* Cards share the parent row tracks via subgrid so title, price and CTA rows align across columns. */}
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/*
+          Cards share the parent row tracks via subgrid so title, price and CTA rows align across columns.
+          On lg a 6-track grid with 2-track cards fits 3 per row and centers the 2 cards of the last row.
+        */}
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {DOCUMENTS.map((doc) => (
-            <li key={doc.id} className="row-span-5 grid grid-rows-subgrid gap-0">
+            <li
+              key={doc.id}
+              className="row-span-5 grid grid-rows-subgrid gap-0 lg:col-span-2 lg:nth-last-2:nth-[3n+1]:col-start-2"
+            >
               <DocumentCard doc={doc} />
             </li>
           ))}
@@ -47,7 +54,7 @@ function DocumentCard({ doc }: { doc: LegalDocument }) {
         alt={doc.image.alt}
         label={doc.image.brief}
         className="aspect-16/10 w-full rounded-none"
-        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
       />
 
       <div className="flex items-center gap-3 px-5 pt-5">

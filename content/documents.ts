@@ -3,9 +3,14 @@
  * Any page or section that mentions a document or its price must read it from here.
  */
 
-export type DocumentId = "arrendamiento" | "laboral" | "prestacion-servicios" | "derecho-peticion"
+export type DocumentId =
+  | "arrendamiento"
+  | "laboral"
+  | "prestacion-servicios"
+  | "derecho-peticion"
+  | "inasistencia-alimentaria"
 
-export type DocumentIconKey = "house" | "briefcase" | "file-signature" | "file-text"
+export type DocumentIconKey = "house" | "briefcase" | "file-signature" | "file-text" | "users"
 
 export type LegalDocument = {
   id: DocumentId
@@ -75,6 +80,20 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     image: {
       alt: "Documento de salud sobre un escritorio con estetoscopio",
       brief: "Foto: documento de salud con estetoscopio (horizontal, 16:10)",
+    },
+  },
+  {
+    id: "inasistencia-alimentaria",
+    title: "Denuncia por inasistencia alimentaria",
+    description: "Denuncia ante la Fiscalía al padre o la madre que no cumple con los alimentos de tus hijos.",
+    // Same price as derecho de petición (confirmed by the owner, 2026-11-12).
+    priceCop: 35900,
+    ctaLabel: "Generar mi denuncia de alimentos",
+    whatsappText: "Hola lidIA, necesito generar una denuncia por inasistencia alimentaria",
+    icon: "users",
+    image: {
+      alt: "Madre abrazando a su hijo en casa",
+      brief: "Foto: madre o padre abrazando a su hijo (horizontal, 16:10)",
     },
   },
 ]
