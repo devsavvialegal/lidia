@@ -13,7 +13,6 @@ export const PAGE_META = {
 } as const
 
 export const HERO = {
-  badge: "Documentos legales por WhatsApp",
   title: {
     before: "Tus documentos legales, ",
     highlight: "rápidos, seguros",

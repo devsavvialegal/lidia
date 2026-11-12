@@ -1,4 +1,4 @@
-import { CircleCheck, MessageCircle, ShieldCheck, Smartphone, Zap, type LucideIcon } from "lucide-react"
+import { CircleCheck,ShieldCheck, Smartphone, Zap, type LucideIcon } from "lucide-react"
 
 import { MagneticButton } from "@/components/magnetic-button"
 import { ImageSlot } from "@/components/producto/image-slot"
@@ -16,11 +16,6 @@ export function HeroSection() {
     <section className="relative px-5 pb-16 pt-28 md:px-12 md:pb-24 md:pt-36 lg:px-16">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16">
         <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-lavanda/45 bg-foreground/10 px-4 py-1.5 backdrop-blur-md">
-            <MessageCircle aria-hidden="true" className="h-3.5 w-3.5 text-brand-lavanda" />
-            <p className="text-xs font-medium text-foreground/90">{HERO.badge}</p>
-          </div>
-
           <h1 className="mb-5 font-sans text-[2.15rem] font-semibold leading-[1.06] tracking-tight text-foreground md:text-6xl lg:text-7xl">
             <span className="text-balance">
               {HERO.title.before}
