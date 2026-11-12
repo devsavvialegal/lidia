@@ -17,14 +17,16 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 })
 
+const SITE_DESCRIPTION =
+  "Genera derechos de petición, contratos y denuncias por inasistencia alimentaria por WhatsApp con flujos automatizados, minutas predefinidas y diligenciamiento guiado."
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
     template: "%s | LidIA Legal co",
   },
-  description:
-    "Genera derechos de petición y contratos por WhatsApp con flujos automatizados, minutas predefinidas y diligenciamiento guiado.",
+  description: SITE_DESCRIPTION,
   applicationName: "lidIA",
   keywords: [
     "LidIA",
@@ -33,6 +35,8 @@ export const metadata: Metadata = {
     "derecho de petición",
     "contrato de prestación de servicios",
     "contrato laboral",
+    "contrato de arrendamiento",
+    "denuncia por inasistencia alimentaria",
     "automatización legal Colombia",
     "documentos jurídicos Colombia",
   ],
@@ -66,14 +70,12 @@ export const metadata: Metadata = {
     ...BASE_OPEN_GRAPH,
     url: SITE_URL,
     title: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
-    description:
-      "Genera derechos de petición y contratos por WhatsApp con flujos automatizados, minutas predefinidas y diligenciamiento guiado.",
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     ...BASE_TWITTER,
     title: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
-    description:
-      "Genera derechos de petición y contratos por WhatsApp con flujos automatizados, minutas predefinidas y diligenciamiento guiado.",
+    description: SITE_DESCRIPTION,
   },
   category: "legal technology",
 }
