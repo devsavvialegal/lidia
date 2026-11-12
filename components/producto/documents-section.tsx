@@ -22,9 +22,10 @@ export function DocumentsSection() {
           <span className="text-brand-lavanda">{DOCUMENTS_SECTION.title.highlight}</span>
         </h2>
 
+        {/* Cards share the parent row tracks via subgrid so title, price and CTA rows align across columns. */}
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {DOCUMENTS.map((doc) => (
-            <li key={doc.id}>
+            <li key={doc.id} className="row-span-5 grid grid-rows-subgrid gap-0">
               <DocumentCard doc={doc} />
             </li>
           ))}
@@ -40,7 +41,7 @@ function DocumentCard({ doc }: { doc: LegalDocument }) {
   const Icon = documentIcons[doc.icon]
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/12 bg-foreground/5 transition-colors duration-300 hover:border-brand-lavanda/45 hover:bg-foreground/10">
+    <article className="group row-span-5 grid grid-rows-subgrid gap-0 overflow-hidden rounded-3xl border border-foreground/12 bg-foreground/5 transition-colors duration-300 hover:border-brand-lavanda/45 hover:bg-foreground/10">
       <ImageSlot
         src={doc.image.src}
         alt={doc.image.alt}
@@ -49,33 +50,31 @@ function DocumentCard({ doc }: { doc: LegalDocument }) {
         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
       />
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="mb-3 flex items-center gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brand-lavanda/30 bg-brand-purple/15">
-            <Icon aria-hidden="true" className="h-4 w-4 text-brand-lavanda" />
-          </span>
-          <h3 className="font-sans text-lg font-semibold leading-tight text-foreground">{doc.title}</h3>
-        </div>
+      <div className="flex items-center gap-3 px-5 pt-5">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brand-lavanda/30 bg-brand-purple/15">
+          <Icon aria-hidden="true" className="h-4 w-4 text-brand-lavanda" />
+        </span>
+        <h3 className="font-sans text-lg font-semibold leading-tight text-foreground">{doc.title}</h3>
+      </div>
 
-        <p className="mb-6 text-sm leading-relaxed text-foreground/70">{doc.description}</p>
+      <p className="px-5 pt-3 text-sm leading-relaxed text-foreground/70">{doc.description}</p>
 
-        <div className="mt-auto">
-          <p className="mb-4 text-center">
-            <span className="inline-block rounded-full bg-brand-purple/20 px-6 py-2 font-sans text-2xl font-semibold text-foreground">
-              {formatCop(doc.priceCop)}
-            </span>
-          </p>
+      <p className="self-end px-5 pt-6 text-center">
+        <span className="inline-block rounded-full bg-brand-purple/20 px-6 py-2 font-sans text-2xl font-semibold text-foreground">
+          {formatCop(doc.priceCop)}
+        </span>
+      </p>
 
-          <a
-            href={buildWhatsappUrl(doc.whatsappText)}
-            target="_blank"
-            rel="noreferrer"
-            className="flex w-full items-center justify-center gap-1 rounded-full text-center border border-brand-lavanda/30 bg-foreground/5 px-6 py-2.5 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-brand-lavanda/55 hover:bg-foreground/10"
-          >
-            {doc.ctaLabel}
-            <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
-          </a>
-        </div>
+      <div className="px-5 pb-5 pt-4">
+        <a
+          href={buildWhatsappUrl(doc.whatsappText)}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-full w-full items-center justify-center gap-1 rounded-full border border-brand-lavanda/30 bg-foreground/5 px-6 py-2.5 text-center text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-brand-lavanda/55 hover:bg-foreground/10"
+        >
+          {doc.ctaLabel}
+          <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+        </a>
       </div>
     </article>
   )
