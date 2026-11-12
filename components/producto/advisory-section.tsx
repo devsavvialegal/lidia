@@ -11,12 +11,12 @@ export function AdvisorySection() {
   return (
     <section id="asesoria" className="scroll-mt-24 px-5 py-16 md:px-12 md:py-24 lg:px-16">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="grid overflow-hidden rounded-3xl border border-brand-lavanda/30 bg-brand-purple/10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)]">
+        <div className="grid overflow-hidden rounded-3xl bg-brand-purple/10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)]">
           <ImageSlot
             src={ADVISORY.image.src}
             alt={ADVISORY.image.alt}
             label={ADVISORY.image.brief}
-            className="aspect-4/3 w-full rounded-none border-0 md:aspect-auto md:h-full md:min-h-64"
+            className="aspect-4/3 w-full rounded-none md:aspect-auto md:h-full md:min-h-64"
             sizes="(min-width: 768px) 33vw, 100vw"
           />
 
@@ -30,7 +30,7 @@ export function AdvisorySection() {
               </h2>
             </div>
 
-            <div className="lg:border-l lg:border-brand-lavanda/30 lg:pl-10">
+            <div>
               <p className="mb-4 text-sm leading-relaxed text-foreground/80 md:text-base">{ADVISORY.description}</p>
               <p className="mb-1 flex flex-wrap items-baseline gap-x-2">
                 <span className="text-xs font-medium uppercase tracking-wider text-foreground/60">

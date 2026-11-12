@@ -9,7 +9,7 @@ export function FinalCtaSection() {
   return (
     <footer className="px-5 pb-10 pt-16 md:px-12 md:pt-24 lg:px-16">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="flex flex-col items-center gap-8 rounded-3xl border border-brand-lavanda/30 bg-linear-to-br from-brand-purple/30 via-brand-purple/15 to-brand-navy p-8 text-center md:flex-row md:justify-between md:p-12 md:text-left">
+        <div className="flex flex-col items-center gap-8 rounded-3xl bg-linear-to-br from-brand-purple/30 via-brand-purple/15 to-brand-navy p-8 text-center md:flex-row md:justify-between md:p-12 md:text-left">
           <div className="flex flex-col items-center gap-6 md:flex-row md:gap-8">
             <Image
               src="/lidia-logo-white.png"

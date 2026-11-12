@@ -39,7 +39,7 @@ export function HowItWorksSection() {
               const Icon = stepIcons[step.icon]
               return (
                 <li key={step.title} className="relative flex gap-4 lg:flex-col lg:gap-3">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-lavanda/30 bg-brand-purple/15">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-purple/15">
                     <Icon aria-hidden="true" className="h-6 w-6 text-brand-lavanda" />
                   </span>
 

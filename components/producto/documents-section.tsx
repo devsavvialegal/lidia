@@ -41,17 +41,17 @@ function DocumentCard({ doc }: { doc: LegalDocument }) {
   const Icon = documentIcons[doc.icon]
 
   return (
-    <article className="group row-span-5 grid grid-rows-subgrid gap-0 overflow-hidden rounded-3xl border border-foreground/12 bg-foreground/5 transition-colors duration-300 hover:border-brand-lavanda/45 hover:bg-foreground/10">
+    <article className="group row-span-5 grid grid-rows-subgrid gap-0 overflow-hidden rounded-3xl bg-foreground/5 transition-colors duration-300 hover:bg-foreground/10">
       <ImageSlot
         src={doc.image.src}
         alt={doc.image.alt}
         label={doc.image.brief}
-        className="aspect-16/10 w-full rounded-none border-0 border-b"
+        className="aspect-16/10 w-full rounded-none"
         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
       />
 
       <div className="flex items-center gap-3 px-5 pt-5">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brand-lavanda/30 bg-brand-purple/15">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-purple/15">
           <Icon aria-hidden="true" className="h-4 w-4 text-brand-lavanda" />
         </span>
         <h3 className="font-sans text-lg font-semibold leading-tight text-foreground">{doc.title}</h3>

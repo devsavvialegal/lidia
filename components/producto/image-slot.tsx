@@ -18,7 +18,7 @@ export function ImageSlot({ src, alt, label, className, priority, sizes = "100vw
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-3xl border border-foreground/12 bg-foreground/5",
+        "relative overflow-hidden rounded-3xl bg-foreground/5",
         className,
       )}
     >

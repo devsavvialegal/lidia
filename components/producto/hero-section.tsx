@@ -48,7 +48,7 @@ export function HeroSection() {
               const Icon = highlightIcons[icon]
               return (
                 <li key={label} className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-lavanda/30 bg-brand-purple/15">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-purple/15">
                     <Icon aria-hidden="true" className="h-4 w-4 text-brand-lavanda" />
                   </span>
                   <span className="text-sm font-medium text-foreground/85">{label}</span>
@@ -68,7 +68,7 @@ export function HeroSection() {
             sizes="(min-width: 768px) 45vw, 100vw"
           />
 
-          <div className="absolute -bottom-5 left-4 right-4 flex items-center gap-3 rounded-2xl border border-brand-lavanda/30 bg-brand-navy/80 px-4 py-3 backdrop-blur-xl md:-left-8 md:right-auto">
+          <div className="absolute -bottom-5 left-4 right-4 flex items-center gap-3 rounded-2xl bg-brand-navy/80 px-4 py-3 backdrop-blur-xl md:-left-8 md:right-auto">
             <CircleCheck aria-hidden="true" className="h-8 w-8 shrink-0 text-brand-purple" />
             <p className="text-sm font-medium leading-snug text-foreground">{HERO.floatingBadge}</p>
           </div>

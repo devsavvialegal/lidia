@@ -39,7 +39,7 @@ function FaqEntry({ item }: { item: FaqItem }) {
   return (
     <AccordionItem
       value={item.question}
-      className="rounded-2xl border border-foreground/12 bg-foreground/5 px-5 transition-colors last:border-b data-[state=open]:border-brand-lavanda/45 data-[state=open]:bg-foreground/10"
+      className="rounded-2xl border-0 bg-foreground/5 px-5 transition-colors data-[state=open]:bg-foreground/10"
     >
       <AccordionTrigger className="text-sm font-medium text-foreground hover:no-underline md:text-base [&>svg]:text-brand-lavanda">
         {item.question}

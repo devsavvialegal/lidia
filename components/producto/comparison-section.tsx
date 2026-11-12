@@ -18,9 +18,9 @@ export function ComparisonSection() {
         </h2>
 
         <div className="grid items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_160px]">
-          <article className="rounded-3xl border border-foreground/12 bg-foreground/5 p-6">
+          <article className="rounded-3xl bg-foreground/5 p-6">
             <div className="mb-5 flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 bg-foreground/10">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10">
                 <Bot aria-hidden="true" className="h-5 w-5 text-foreground/70" />
               </span>
               <h3 className="font-sans text-lg font-semibold text-foreground/85">{COMPARISON.generic.label}</h3>
@@ -41,7 +41,7 @@ export function ComparisonSection() {
             </span>
           </div>
 
-          <article className="overflow-hidden rounded-3xl border border-brand-lavanda/45 bg-brand-purple/10">
+          <article className="overflow-hidden rounded-3xl bg-brand-purple/15">
             <div className="bg-brand-purple/80 px-6 py-4">
               <Image
                 src="/lidia-logo-white.png"
