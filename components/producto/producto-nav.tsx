@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { MagneticButton } from "@/components/magnetic-button"
-import { MobileMenu } from "@/components/producto/mobile-menu"
+import { MobileMenu } from "@/components/mobile-menu"
 import { NAV } from "@/content/producto"
 import { buildWhatsappUrl } from "@/lib/whatsapp"
 
@@ -43,7 +43,13 @@ export function ProductoNav() {
         {NAV.cta.label}
       </MagneticButton>
 
-      <MobileMenu />
+      <MobileMenu
+        items={NAV.links}
+        cta={{ label: NAV.cta.label, href: buildWhatsappUrl(NAV.cta.whatsappText) }}
+        openLabel={NAV.mobileMenu.openLabel}
+        title={NAV.mobileMenu.title}
+        className="lg:hidden"
+      />
     </nav>
   )
 }
