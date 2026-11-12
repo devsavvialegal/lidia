@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Epilogue, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SITE_URL } from "@/lib/site"
 import "./globals.css"
 
 const epilogue = Epilogue({
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lidialegal.co"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
     template: "%s | LidIA Legal co",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_CO",
-    url: "https://lidialegal.co",
+    url: SITE_URL,
     siteName: "LidIA Legal co",
     title: "LidIA Legal co | Agente de generación de documentos legales de forma automatizada.",
     description:

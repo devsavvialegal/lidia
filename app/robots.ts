@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next"
 
-// Keep in sync with metadataBase in app/layout.tsx.
-const SITE_URL = "https://lidialegal.co"
+import { SITE_URL } from "@/lib/site"
 
 export default function robots(): MetadataRoute.Robots {
   return {
