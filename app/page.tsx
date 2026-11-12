@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
@@ -9,8 +10,11 @@ import { ServicesSection } from "@/components/sections/services-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
+import { MobileMenu } from "@/components/mobile-menu"
 import { WHATSAPP_BOT_URL } from "@/lib/whatsapp"
 import { useRef, useEffect, useState } from "react"
+
+const NAV_SECTIONS = ["Inicio", "Servicios", "Cómo funciona", "Alcance", "Contacto"]
 
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -192,7 +196,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Inicio", "Servicios", "Cómo funciona", "Alcance", "Contacto"].map((item, index) => (
+          {NAV_SECTIONS.map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -208,6 +212,13 @@ export default function Home() {
               />
             </button>
           ))}
+          <Link
+            href="/documentos-legales"
+            className="group relative font-sans text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+          >
+            Documentos y precios
+            <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
+          </Link>
         </div>
 
         <MagneticButton
@@ -219,6 +230,17 @@ export default function Home() {
         >
           Hablar con lidIA
         </MagneticButton>
+
+        <MobileMenu
+          items={[
+            ...NAV_SECTIONS.map((label, index) => ({ label, onSelect: () => scrollToSection(index) })),
+            { label: "Documentos y precios", href: "/documentos-legales" },
+          ]}
+          cta={{ label: "Hablar con lidIA", href: WHATSAPP_BOT_URL }}
+          openLabel="Abrir menú"
+          title="Menú"
+          className="md:hidden"
+        />
       </nav>
 
       <div
