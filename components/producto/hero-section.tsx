@@ -34,6 +34,8 @@ export function HeroSection() {
             rel="noreferrer"
             size="lg"
             variant="primary"
+            // The anchor is inline by default; as a block it wraps as one pill on narrow screens.
+            className="flex w-full items-center justify-center sm:inline-flex sm:w-auto"
           >
             {HERO.cta.label}
           </MagneticButton>
