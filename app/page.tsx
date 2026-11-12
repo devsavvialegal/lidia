@@ -178,7 +178,7 @@ export default function Home() {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-4 transition-opacity duration-700 md:px-12 md:py-6 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-4 transition-opacity duration-700 md:px-12 md:py-6 short:py-4 tiny:py-3 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -190,7 +190,7 @@ export default function Home() {
               width={108}
               height={40}
               priority
-              className="h-9 w-auto md:h-12"
+              className="h-9 w-auto md:h-12 short:h-10 tiny:h-8"
             />
           </div>
         </button>
@@ -252,18 +252,18 @@ export default function Home() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
       >
         {/* Hero Section */}
-        <section className="flex h-dvh w-screen shrink-0 snap-start flex-col justify-center overflow-y-auto overscroll-y-contain px-5 pb-10 pt-20 md:justify-end md:min-h-screen md:overflow-visible md:px-12 md:pb-24 md:pt-24">
+        <section className="flex h-dvh w-screen shrink-0 snap-start flex-col justify-center overflow-y-auto overscroll-y-contain px-5 pb-10 pt-20 md:justify-end md:min-h-screen md:overflow-visible md:px-12 md:pb-24 md:pt-24 short:pb-14 short:pt-20 tiny:pb-10 tiny:pt-16">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-brand-lavanda/45 bg-foreground/10 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="text-xs font-medium text-foreground/90">Tu asistente legal para diligenciamiento automatizado de documentos</p>
             </div>
-            <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-[2.15rem] font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:mb-6 md:text-7xl">
+            <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-[2.15rem] font-semibold leading-[1.06] tracking-tight text-foreground duration-1000 md:mb-6 md:text-7xl short:mb-4 short:text-6xl tiny:text-5xl">
               <span className="text-balance">
                 Genera tu documento legal
                 <br /> en minutos con lidIA.
               </span>
             </h1>
-            <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
+            <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl short:mb-6 short:text-lg tiny:mb-4 tiny:text-base">
               <span className="text-pretty">
                 Comparte los datos con LidIA y ella se encarga del diligenciamiento automátizado en minutas curadas por nuestros abogados.
                 sin vueltas, rápido, claro y confiable.

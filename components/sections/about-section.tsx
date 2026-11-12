@@ -13,20 +13,20 @@ export function AboutSection({
   return (
     <section
       ref={ref}
-      className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-4 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-12"
+      className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-4 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 short:pb-6 short:pt-20 tiny:pb-4 tiny:pt-16 lg:px-12"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-6 md:grid-cols-2 md:gap-16 lg:gap-22">
           {/* Left side - Story */}
           <div>
             <div
-              className={`mb-6 transition-all duration-700 md:mb-12 ${
+              className={`mb-6 transition-all duration-700 md:mb-12 short:mb-4 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-12 opacity-0"
               }`}
             >
-              <h2 className="mb-3 font-sans text-2xl font-semibold leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
+              <h2 className="mb-3 font-sans text-2xl font-semibold leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl short:text-5xl tiny:text-4xl">
                 Lo que hace
                 <br />
                 LidIA y
@@ -58,7 +58,7 @@ export function AboutSection({
           </div>
 
           {/* Right side - Stats with creative layout */}
-          <div className="flex flex-col justify-center space-y-3 md:space-y-12">
+          <div className="flex flex-col justify-center space-y-3 md:space-y-12 short:space-y-6 tiny:space-y-4">
             {[
               {
                 value: "4",
@@ -98,7 +98,7 @@ export function AboutSection({
                     maxWidth: i % 2 === 0 ? "100%" : "85%",
                   }}
                 >
-                    <div className="text-2xl font-semibold text-foreground md:text-6xl lg:text-7xl">
+                    <div className="text-2xl font-semibold text-foreground md:text-6xl lg:text-7xl short:text-5xl tiny:text-4xl">
                     {stat.value}
                   </div>
                   <div>
@@ -116,7 +116,7 @@ export function AboutSection({
         </div>
 
         <div
-          className={`mt-6 flex flex-wrap gap-2 transition-all duration-700 md:mt-16 md:gap-4 ${
+          className={`mt-6 flex flex-wrap gap-2 transition-all duration-700 md:mt-16 md:gap-4 short:mt-8 tiny:mt-6 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
           style={{ transitionDelay: "750ms" }}

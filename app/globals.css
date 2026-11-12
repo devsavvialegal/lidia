@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/*
+  Desktop layouts on short viewports (low-res laptops, browser/OS zoom, short windows).
+  "tiny" is declared after "short" so its utilities win when both match.
+*/
+@custom-variant short (@media (min-width: 48rem) and (max-height: 820px));
+@custom-variant tiny (@media (min-width: 48rem) and (max-height: 640px));
 
 :root {
   --brand-navy: #0c2b3e;

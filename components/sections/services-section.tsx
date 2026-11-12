@@ -8,17 +8,17 @@ export function ServicesSection() {
   return (
     <section
       ref={ref}
-      className="flex h-[100dvh] w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-5 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
+      className="flex h-[100dvh] w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-5 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 short:pb-6 short:pt-20 tiny:pb-4 tiny:pt-16 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-12 transition-all duration-700 md:mb-16 short:mb-6 tiny:mb-4 ${
             isVisible
               ? "translate-y-0 opacity-100"
               : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-3xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-2 font-sans text-3xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl short:text-5xl tiny:text-4xl">
             Así funciona LidIA
           </h2>
           <p className="text-sm text-foreground/70 md:text-base">
@@ -26,7 +26,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24 short:gap-y-4 tiny:gap-y-3">
           {[
             {
               title: "1) Conversación guiada por WhatsApp",
@@ -95,16 +95,16 @@ function ServiceCard({
 
   return (
     <div
-      className={`group rounded-2xl border border-foreground/12 bg-foreground/5 p-4 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:p-6 ${getRevealClass()}`}
+      className={`group rounded-2xl border border-foreground/12 bg-foreground/5 p-4 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:p-6 short:p-4 tiny:p-3 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
       }}
     >
-      <div className="mb-3 flex items-center gap-3">
+      <div className="mb-3 flex items-center gap-3 tiny:mb-2">
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
         <span className="text-xs text-foreground/60">0{index + 1}</span>
       </div>
-      <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:mb-2 md:text-3xl">
+      <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:mb-2 md:text-3xl short:text-2xl tiny:text-xl">
         {service.title}
       </h3>
       <p className="max-w-sm text-xs leading-relaxed text-foreground/80 md:text-base">

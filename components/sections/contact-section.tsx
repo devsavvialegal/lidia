@@ -13,19 +13,19 @@ export function ContactSection() {
     <section
       ref={ref}
       id="contacto"
-      className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-4 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 lg:px-16"
+      className="flex h-dvh w-screen shrink-0 snap-start items-start overflow-y-auto overscroll-y-contain px-4 pb-6 pt-20 md:h-screen md:items-center md:overflow-visible md:px-12 md:pb-0 md:pt-0 short:pb-6 short:pt-20 tiny:pb-4 tiny:pt-16 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div>
           <div className="flex flex-col justify-center">
             <div
-              className={`mb-6 transition-all duration-700 md:mb-12 ${
+              className={`mb-6 transition-all duration-700 md:mb-12 short:mb-6 tiny:mb-4 ${
                 isVisible
                   ? "translate-x-0 opacity-100"
                   : "-translate-x-12 opacity-0"
               }`}
             >
-              <h2 className="mb-2 font-sans text-3xl font-semibold leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
+              <h2 className="mb-2 font-sans text-3xl font-semibold leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl short:text-6xl tiny:text-5xl">
                 Empieza tu
                 <br />
                 proceso con
@@ -41,7 +41,7 @@ export function ContactSection() {
               </p>
             </div>
 
-            <div className="space-y-3 md:space-y-8">
+            <div className="space-y-3 md:space-y-8 short:space-y-4 tiny:space-y-3">
               {/* <a
                 href="mailto:contacto@lidialegal.co"
                 className={`group block transition-all duration-700 ${
