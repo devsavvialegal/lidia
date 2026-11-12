@@ -21,7 +21,7 @@ export const HERO = {
   },
   subtitle: "Minutas curadas por abogados colombianos y diligenciadas fácilmente por WhatsApp.",
   cta: {
-    label: "Crear mi documento por WhatsApp",
+    label: "Generar mi documento por WhatsApp",
     whatsappText: "Hola lidIA, necesito generar un documento legal",
   },
   highlights: [
@@ -108,7 +108,7 @@ export const ADVISORY = {
   priceLabel: "Servicio adicional",
   note: "Disponible al terminar la generación de tu documento. Precio en COP.",
   cta: {
-    label: "Crear mi documento",
+    label: "Generar mi documento",
     // Advisory is only offered at the end of a generation flow, so the CTA starts one.
     whatsappText: "Hola lidIA, necesito generar un documento legal",
   },
@@ -172,7 +172,7 @@ export const NAV = {
     { href: "#preguntas", label: "Preguntas" },
   ],
   cta: {
-    label: "Escríbenos",
+    label: "Generar mi documento",
     whatsappText: "Hola lidIA, necesito generar un documento legal",
   },
 } as const
@@ -180,7 +180,7 @@ export const NAV = {
 export const FINAL_CTA = {
   title: { before: "Tu próximo documento legal comienza ", highlight: "con un mensaje." },
   cta: {
-    label: "Escríbenos por WhatsApp",
+    label: "Generar mi documento por WhatsApp",
     whatsappText: "Hola lidIA, necesito generar un documento legal",
   },
   footer: {

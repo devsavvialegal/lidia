@@ -30,8 +30,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     title: "Contrato de arrendamiento",
     description: "Formaliza el arriendo de tu casa, apartamento o local.",
     priceCop: 81900,
-    ctaLabel: "Crear contrato",
-    whatsappText: "Hola lidIA, quiero crear un contrato de arrendamiento",
+    ctaLabel: "Generar mi contrato de arriendo",
+    whatsappText: "Hola lidIA, necesito generar un contrato de arrendamiento",
     icon: "house",
     image: {
       alt: "Entrega de llaves de una vivienda en arriendo",
@@ -43,8 +43,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     title: "Contrato laboral",
     description: "Término fijo o indefinido para tus trabajadores.",
     priceCop: 81900,
-    ctaLabel: "Crear contrato",
-    whatsappText: "Hola lidIA, quiero crear un contrato laboral",
+    ctaLabel: "Generar mi contrato laboral",
+    whatsappText: "Hola lidIA, necesito generar un contrato laboral",
     icon: "briefcase",
     image: {
       alt: "Apretón de manos al cerrar un acuerdo laboral",
@@ -56,8 +56,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     title: "Contrato de prestación de servicios",
     description: "Acuerdos claros con independientes o proveedores.",
     priceCop: 70900,
-    ctaLabel: "Crear contrato",
-    whatsappText: "Hola lidIA, quiero crear un contrato de prestación de servicios",
+    ctaLabel: "Generar mi contrato de servicios",
+    whatsappText: "Hola lidIA, necesito generar un contrato de prestación de servicios",
     icon: "file-signature",
     image: {
       alt: "Profesional independiente trabajando en su portátil",
@@ -69,8 +69,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     title: "Derecho de petición",
     description: "Solicita, reclama o pide información a EPS, entidades públicas o privadas.",
     priceCop: 35900,
-    ctaLabel: "Crear documento",
-    whatsappText: "Hola lidIA, quiero crear un derecho de petición",
+    ctaLabel: "Generar mi derecho de petición",
+    whatsappText: "Hola lidIA, necesito generar un derecho de petición",
     icon: "file-text",
     image: {
       alt: "Documento de salud sobre un escritorio con estetoscopio",
