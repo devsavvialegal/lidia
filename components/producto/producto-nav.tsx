@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { MagneticButton } from "@/components/magnetic-button"
 import { MobileMenu } from "@/components/mobile-menu"
+import { ProductoNavLinks } from "@/components/producto/producto-nav-links"
 import { NAV } from "@/content/producto"
 import { buildWhatsappUrl } from "@/lib/whatsapp"
 
@@ -20,18 +21,7 @@ export function ProductoNav() {
         />
       </Link>
 
-      <div className="hidden items-center gap-8 lg:flex">
-        {NAV.links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="group relative font-sans text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
-          >
-            {link.label}
-            <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
-          </a>
-        ))}
-      </div>
+      <ProductoNavLinks links={NAV.links} />
 
       <MagneticButton
         href={buildWhatsappUrl(NAV.cta.whatsappText)}
