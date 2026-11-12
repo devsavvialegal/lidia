@@ -1,5 +1,8 @@
 "use client"
 
+import Link from "next/link"
+import { ChevronRight } from "lucide-react"
+
 import { useReveal } from "@/hooks/use-reveal"
 
 export function WorkSection() {
@@ -20,6 +23,13 @@ export function WorkSection() {
             Soluciones disponibles hoy
           </h2>
           <p className="text-sm text-foreground/70 md:text-base">Elige el servicio que necesitas y empieza a hablar con lidIA</p>
+          <Link
+            href="/documentos-legales"
+            className="group mt-4 inline-flex items-center gap-1 rounded-full border border-brand-lavanda/30 bg-foreground/5 px-5 py-2 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-brand-lavanda/55 hover:bg-foreground/10"
+          >
+            Ver documentos y precios
+            <ChevronRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
 
         <div className="space-y-4 md:space-y-8">
