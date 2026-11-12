@@ -52,6 +52,13 @@ export function WorkSection() {
               year: "Activo",
               direction: "right",
             },
+            {
+              number: "05",
+              title: "Denuncia por inasistencia alimentaria",
+              category: "Denuncia ante la Fiscalía por alimentos no pagados a tus hijos",
+              year: "Activo",
+              direction: "left",
+            },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
           ))}
