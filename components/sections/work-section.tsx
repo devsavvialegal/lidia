@@ -12,7 +12,7 @@ export function WorkSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-8 transition-all duration-700 md:mb-12 ${
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
           }`}
         >
@@ -22,7 +22,8 @@ export function WorkSection() {
           <p className="text-sm text-foreground/70 md:text-base">Elige el servicio que necesitas y empieza a hablar con lidIA</p>
         </div>
 
-        <div className="space-y-4 md:space-y-8">
+        {/* Two columns on desktop keep five cards within one viewport height; the last one spans both. */}
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
           {[
             {
               number: "01",
@@ -86,19 +87,15 @@ function ProjectCard({
 
   return (
     <div
-      className={`group flex items-center justify-between rounded-2xl border border-foreground/12 bg-foreground/5 px-4 py-4 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:px-8 md:py-8 ${getRevealClass()}`}
-      style={{
-        transitionDelay: `${index * 150}ms`,
-        marginLeft: index % 2 === 0 ? "0" : "auto",
-        maxWidth: index % 2 === 0 ? "100%" : "100%",
-      }}
+      className={`group flex items-center justify-between gap-4 rounded-2xl border border-foreground/12 bg-foreground/5 px-4 py-4 transition-all duration-700 hover:border-brand-lavanda/45 hover:bg-foreground/10 md:px-8 md:py-6 md:last:odd:col-span-2 ${getRevealClass()}`}
+      style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="flex items-baseline gap-3 md:gap-8">
         <span className="text-sm text-foreground/30 transition-colors group-hover:text-foreground/50 md:text-base">
           {project.number}
         </span>
         <div>
-          <h3 className="mb-1 font-sans text-lg font-semibold text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
+          <h3 className="mb-1 font-sans text-lg font-semibold text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-2xl lg:text-3xl">
             {project.title}
           </h3>
           <p className="text-xs text-foreground/60 md:text-sm">{project.category}</p>
