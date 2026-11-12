@@ -13,10 +13,10 @@ const highlightIcons: Record<(typeof HERO.highlights)[number]["icon"], LucideIco
 
 export function HeroSection() {
   return (
-    <section className="relative px-5 pb-16 pt-28 md:px-12 md:pb-24 md:pt-36 lg:px-16">
+    <section className="relative flex min-h-svh items-center px-5 pb-16 pt-28 md:px-12 md:pb-16 md:pt-28 lg:px-16 short:pb-12 short:pt-24 tiny:pb-10 tiny:pt-20">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16">
         <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
-          <h1 className="mb-5 font-sans text-[2.15rem] font-semibold leading-[1.06] tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h1 className="mb-5 font-sans text-[2.15rem] font-semibold leading-[1.06] tracking-tight text-foreground md:text-6xl lg:text-7xl short:text-5xl tiny:mb-3 tiny:text-4xl">
             <span className="text-balance">
               {HERO.title.before}
               <span className="text-brand-lavanda">{HERO.title.highlight}</span>
@@ -24,7 +24,7 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="mb-8 max-w-xl text-base leading-relaxed text-foreground/85 md:text-xl">
+          <p className="mb-8 max-w-xl text-base leading-relaxed text-foreground/85 md:text-xl short:mb-6 short:text-lg tiny:mb-4 tiny:text-base">
             <span className="text-pretty">{HERO.subtitle}</span>
           </p>
 
@@ -38,7 +38,7 @@ export function HeroSection() {
             {HERO.cta.label}
           </MagneticButton>
 
-          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-4">
+          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-4 short:mt-6 tiny:mt-4">
             {HERO.highlights.map(({ icon, label }) => {
               const Icon = highlightIcons[icon]
               return (
@@ -53,12 +53,13 @@ export function HeroSection() {
           </ul>
         </div>
 
-        <div className="relative animate-in fade-in duration-1000 delay-200">
+        {/* On desktop the photo's height follows the viewport so the hero always fits in one screen. */}
+        <div className="relative mx-auto aspect-4/5 w-full animate-in fade-in duration-1000 delay-200 md:h-[calc(100svh-12rem)] md:max-h-176 md:w-auto md:max-w-full">
           <ImageSlot
             src={HERO.image.src}
             alt={HERO.image.alt}
             label={HERO.image.brief}
-            className="aspect-4/5 w-full"
+            className="h-full w-full"
             priority
             sizes="(min-width: 768px) 45vw, 100vw"
           />
