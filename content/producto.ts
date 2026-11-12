@@ -175,6 +175,10 @@ export const NAV = {
     label: "Generar mi documento",
     whatsappText: "Hola lidIA, necesito generar un documento legal",
   },
+  mobileMenu: {
+    openLabel: "Abrir menú",
+    title: "Menú",
+  },
 } as const
 
 export const FINAL_CTA = {
