@@ -17,7 +17,7 @@ export function ComparisonSection() {
           </span>
         </h2>
 
-        <div className="grid items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_160px]">
+        <div className="grid items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
           <article className="rounded-3xl bg-foreground/5 p-6">
             <div className="mb-5 flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10">
@@ -42,7 +42,8 @@ export function ComparisonSection() {
           </div>
 
           <article className="overflow-hidden rounded-3xl bg-brand-purple/15">
-            <div className="bg-brand-purple/80 px-6 py-4">
+            {/* Navy keeps the purple "lid" of the logo legible; a purple strip would swallow it. */}
+            <div className="bg-brand-navy/70 px-6 py-4">
               <Image
                 src="/lidia-logo-white.png"
                 alt={COMPARISON.lidia.logoAlt}
@@ -51,23 +52,38 @@ export function ComparisonSection() {
                 className="h-8 w-auto"
               />
             </div>
-            <ul className="space-y-3 p-6">
-              {COMPARISON.lidia.points.map((point) => (
-                <li key={point} className="flex gap-3 text-sm leading-relaxed text-foreground">
-                  <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-lavanda" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+            <div className="relative">
+              {/*
+                The photo sits inside the card and fades into it from the left, so image and copy read as one block.
+                Hidden where the card is too narrow to fit both (md–lg, three-column layout).
+              */}
+              <div
+                className="absolute inset-y-0 right-0 hidden w-2/5 sm:block md:hidden xl:block"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 60%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 60%)",
+                }}
+              >
+                <ImageSlot
+                  src={COMPARISON.image.src}
+                  alt={COMPARISON.image.alt}
+                  label={COMPARISON.image.brief}
+                  className="h-full w-full rounded-none"
+                  sizes="(min-width: 1280px) 200px, 40vw"
+                  objectPosition={COMPARISON.image.objectPosition}
+                />
+              </div>
 
-          <ImageSlot
-            src={COMPARISON.image.src}
-            alt={COMPARISON.image.alt}
-            label={COMPARISON.image.brief}
-            className="hidden h-full min-h-48 xl:block"
-            sizes="160px"
-          />
+              <ul className="relative space-y-3 p-6 sm:pr-[42%] md:pr-6 xl:pr-[42%]">
+                {COMPARISON.lidia.points.map((point) => (
+                  <li key={point} className="flex gap-3 text-sm leading-relaxed text-foreground">
+                    <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-lavanda" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>

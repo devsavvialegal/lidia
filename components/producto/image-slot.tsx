@@ -12,9 +12,19 @@ type ImageSlotProps = {
   className?: string
   priority?: boolean
   sizes?: string
+  /** CSS object-position for the photo when the frame crops it, e.g. "75% 50%". Defaults to center. */
+  objectPosition?: string
 }
 
-export function ImageSlot({ src, alt, label, className, priority, sizes = "100vw" }: ImageSlotProps) {
+export function ImageSlot({
+  src,
+  alt,
+  label,
+  className,
+  priority,
+  sizes = "100vw",
+  objectPosition,
+}: ImageSlotProps) {
   return (
     <div
       className={cn(
@@ -23,7 +33,15 @@ export function ImageSlot({ src, alt, label, className, priority, sizes = "100vw
       )}
     >
       {src ? (
-        <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes={sizes}
+          className="object-cover"
+          style={objectPosition ? { objectPosition } : undefined}
+        />
       ) : (
         <div
           role="img"

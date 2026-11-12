@@ -29,7 +29,8 @@ export const HERO = {
     { icon: "smartphone", label: "100% digital" },
   ],
   image: {
-    alt: "Persona creando un documento legal desde su celular",
+    src: "/images/hero-imagen-generando-documento-legal.jpeg",
+    alt: "Mujer sonriendo mientras genera un documento legal desde su celular en la calle",
     brief: "Foto hero: persona sonriendo mientras usa su celular (vertical, 4:5)",
   } as { src?: string; alt: string; brief: string },
   floatingBadge: "Minutas curadas por abogados colombianos",
@@ -65,9 +66,12 @@ export const COMPARISON = {
   },
   versusLabel: "VS",
   image: {
-    alt: "Mazo de juez y balanza de la justicia",
+    src: "/images/mazo-juez.webp",
+    alt: "Mazo de juez sobre un escritorio mientras una persona firma un documento",
     brief: "Foto decorativa: mazo de juez y balanza (vertical, 3:4)",
-  } as { src?: string; alt: string; brief: string },
+    // Landscape photo in a tall frame: keep the gavel (right side) in view.
+    objectPosition: "78% 50%",
+  } as { src?: string; alt: string; brief: string; objectPosition?: string },
 } as const
 
 export const HOW_IT_WORKS = {
@@ -95,7 +99,8 @@ export const HOW_IT_WORKS = {
     },
   ],
   image: {
-    alt: "Chat de LidIA en WhatsApp mostrando el menú de documentos",
+    src: "/images/mobile-chat-lidia.jpeg",
+    alt: "Celular con el chat de LidIA en WhatsApp mostrando el menú de documentos",
     brief: "Captura real del chat de LidIA en WhatsApp con el menú de documentos, dentro de un celular (vertical, 3:4)",
   } as { src?: string; alt: string; brief: string },
 } as const
@@ -118,7 +123,8 @@ export const ADVISORY = {
     whatsappText: "Hola, tengo una duda o un problema con LidIA. Necesito soporte.",
   },
   image: {
-    alt: "Abogada de LidIA lista para atender una asesoría",
+    src: "/images/abogado-en-asesoria.jpeg",
+    alt: "Abogado de LidIA atendiendo una asesoría por videollamada",
     brief: "Foto: abogada o asesora sonriendo con audífonos (horizontal, 4:3)",
   } as { src?: string; alt: string; brief: string },
 } as const
