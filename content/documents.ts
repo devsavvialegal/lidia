@@ -39,7 +39,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     whatsappText: "Hola lidIA, necesito generar un contrato de arrendamiento",
     icon: "house",
     image: {
-      alt: "Entrega de llaves de una vivienda en arriendo",
+      src: "/images/contrato-arrendamiento.jpg",
+      alt: "Pareja firmando un contrato de arrendamiento junto al propietario, con las llaves sobre la mesa",
       brief: "Foto: entrega de llaves de una vivienda (horizontal, 16:10)",
     },
   },
@@ -52,7 +53,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     whatsappText: "Hola lidIA, necesito generar un contrato laboral",
     icon: "briefcase",
     image: {
-      alt: "Apretón de manos al cerrar un acuerdo laboral",
+      src: "/images/contrato-laboral.jpg",
+      alt: "Trabajadora firmando su contrato laboral frente a su empleadora en una oficina",
       brief: "Foto: apretón de manos entre empleador y trabajador (horizontal, 16:10)",
     },
   },
@@ -65,7 +67,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     whatsappText: "Hola lidIA, necesito generar un contrato de prestación de servicios",
     icon: "file-signature",
     image: {
-      alt: "Profesional independiente trabajando en su portátil",
+      src: "/images/contrato-prestacion-servicios.jpg",
+      alt: "Profesional independiente firmando un contrato de prestación de servicios en su escritorio",
       brief: "Foto: profesional independiente trabajando en su portátil (horizontal, 16:10)",
     },
   },
@@ -78,7 +81,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     whatsappText: "Hola lidIA, necesito generar un derecho de petición",
     icon: "file-text",
     image: {
-      alt: "Documento de salud sobre un escritorio con estetoscopio",
+      src: "/images/derecho-peticion.jpg",
+      alt: "Persona sosteniendo un derecho de petición frente a un edificio público",
       brief: "Foto: documento de salud con estetoscopio (horizontal, 16:10)",
     },
   },
@@ -92,7 +96,8 @@ export const DOCUMENTS: readonly LegalDocument[] = [
     whatsappText: "Hola lidIA, necesito generar una denuncia por inasistencia alimentaria",
     icon: "users",
     image: {
-      alt: "Madre abrazando a su hijo en casa",
+      src: "/images/inasistencia-alimentaria.jpg",
+      alt: "Persona revisando una denuncia por inasistencia alimentaria junto a un registro civil de nacimiento",
       brief: "Foto: madre o padre abrazando a su hijo (horizontal, 16:10)",
     },
   },
