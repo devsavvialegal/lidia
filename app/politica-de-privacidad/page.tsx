@@ -467,7 +467,7 @@ export default function PrivacyPolicyPage() {
               Política de privacidad
             </h2>
             <p className="mt-5 max-w-4xl text-sm leading-7 text-foreground/72 md:text-[15px]">
-              En LidIA tratamos los datos personales exclusivamente para el diligenciamiento automatizado de documentos y la gestión asociada a ese servicio. Esta política explica el alcance del tratamiento y los derechos del titular conforme a la Ley 1581 de 2012 en Colombia.
+              En LidIA tratamos los datos personales exclusivamente para el diligenciamiento automatizado de documentos y la gestión asociada a ese servicio, salvo los datos de navegación del sitio web descritos en la sección 6. Esta política explica el alcance del tratamiento y los derechos del titular conforme a la Ley 1581 de 2012 en Colombia.
             </p>
             <p className="mt-4 text-sm text-foreground/55">Última actualización: 26 de noviembre de 2026</p>
           </header>
@@ -479,7 +479,7 @@ export default function PrivacyPolicyPage() {
               Para interactuar con LidIA, la interfaz debe incluir una autorización previa, expresa e informada para el tratamiento de datos personales conforme a esta política de privacidad.
             </p>
             <p className="mt-5 max-w-3xl border-l-2 border-brand-lavanda/55 pl-4 text-sm leading-7 text-foreground/82">
-              Autorizo de manera previa, expresa e informada a LidIA para el tratamiento de mis datos personales de acuerdo con su Política de Privacidad. Entiendo que mis datos se usarán exclusivamente para la generación de mis documentos legales y el seguimiento de mis trámites, cuando aplique.
+              Autorizo de manera previa, expresa e informada a LidIA para el tratamiento de mis datos personales de acuerdo con su Política de Privacidad. Entiendo que mis datos se usarán exclusivamente para la generación de mis documentos legales y el seguimiento de mis trámites, cuando aplique, salvo los datos de navegación del sitio web descritos en la sección 6.
             </p>
           </div>
             </section>
