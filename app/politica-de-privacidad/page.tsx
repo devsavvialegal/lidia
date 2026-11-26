@@ -267,7 +267,7 @@ const policySections: LegalSection[] = [
       "Enviar recordatorios sobre vencimientos o actuaciones asociadas a tus trámites, cuando aplique.",
       "Brindar soporte técnico y mejorar la experiencia de uso de LidIA.",
     ],
-    note: "LidIA no vende, no alquila y no comparte tus datos personales ni la información de tus casos con terceras empresas con fines comerciales o publicitarios.",
+    note: "LidIA no vende ni alquila tus datos personales. La información de tus casos y los datos que suministras para generar tus documentos no se comparten con terceros con fines comerciales o publicitarios. Los datos de navegación en nuestro sitio web se tratan como se describe en la sección «Cookies y tecnologías de seguimiento».",
   },
   {
     title: "4. Derechos del titular",
@@ -285,7 +285,19 @@ const policySections: LegalSection[] = [
     ],
   },
   {
-    title: "6. Canales de atención para habeas data",
+    title: "6. Cookies y tecnologías de seguimiento",
+    content: [
+      "Nuestro sitio web utiliza cookies y tecnologías similares, propias y de terceros, para medir su funcionamiento y el alcance de nuestras campañas:",
+    ],
+    items: [
+      "Analítica: usamos Vercel Analytics para conocer de forma agregada cuántas personas visitan el sitio y qué secciones consultan.",
+      "Publicidad y medición: usamos el Píxel de Meta (Meta Platforms, Inc.), que recoge datos como tu dirección IP, el tipo de navegador y dispositivo, las páginas que visitas y los clics en los enlaces que abren WhatsApp. Con esta información medimos la efectividad de nuestros anuncios en Facebook e Instagram y mostramos publicidad de LidIA a personas que ya visitaron el sitio.",
+      "Estas tecnologías no recogen la información de tus casos ni los datos que suministras durante la conversación con LidIA para generar tus documentos.",
+    ],
+    note: "Meta trata esta información de acuerdo con su propia política de privacidad, disponible en facebook.com/privacy/policy. Puedes bloquear o eliminar las cookies desde la configuración de tu navegador y gestionar la publicidad que ves en Meta en la sección «Preferencias de anuncios» de tu cuenta de Facebook o Instagram.",
+  },
+  {
+    title: "7. Canales de atención para habeas data",
     content: [
       "Si deseas consultar, actualizar, rectificar o eliminar tus datos de los sistemas de LidIA, puedes enviar una solicitud escrita a nuestro Oficial de Protección de Datos a través de:",
     ],
@@ -457,7 +469,7 @@ export default function PrivacyPolicyPage() {
             <p className="mt-5 max-w-4xl text-sm leading-7 text-foreground/72 md:text-[15px]">
               En LidIA tratamos los datos personales exclusivamente para el diligenciamiento automatizado de documentos y la gestión asociada a ese servicio. Esta política explica el alcance del tratamiento y los derechos del titular conforme a la Ley 1581 de 2012 en Colombia.
             </p>
-            <p className="mt-4 text-sm text-foreground/55">Última actualización: 06 de Junio 2026</p>
+            <p className="mt-4 text-sm text-foreground/55">Última actualización: 26 de noviembre de 2026</p>
           </header>
 
           <LegalSections sections={policySections} />
