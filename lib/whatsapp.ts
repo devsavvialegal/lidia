@@ -6,7 +6,7 @@ const DEFAULT_TEXT = 'Hola lidIA, quiero generar un documento'
  * n8n "lidIA - Main Router (WhatsApp)" workflow, which sends users here when
  * they type "soporte" | "ayuda" | "asesor".
  */
-const SUPPORT_NUMBER = '573134495118'
+export const SUPPORT_NUMBER = '573134495118'
 
 function toWhatsappUrl(number: string, text: string): string {
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`

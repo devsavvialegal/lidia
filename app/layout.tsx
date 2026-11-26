@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Epilogue, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { MetaPixel } from "@/components/meta-pixel"
 import { BASE_OPEN_GRAPH, BASE_TWITTER, SITE_URL } from "@/lib/site"
 import "./globals.css"
 
@@ -90,6 +91,8 @@ export default function RootLayout({
       <body className={`${epilogue.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        {/* Production only, so local development does not pollute the ad audiences. */}
+        {process.env.NODE_ENV === "production" && <MetaPixel />}
       </body>
     </html>
   )
